@@ -1,0 +1,2335 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+  <!-- ============================================ -->
+  <!-- ICONS & FAVICON CONFIGURATION                -->
+  <!-- ============================================ -->
+  <!-- ใช้รูปเดียวกันสำหรับทุกขนาด favicon และ apple touch icon -->
+  <link id="apple-touch-icon" rel="apple-touch-icon" href="https://img5.pic.in.th/file/secure-sv1/227375.jpg">
+  <link id="icon-192" rel="icon" sizes="192x192" href="https://img5.pic.in.th/file/secure-sv1/227375.jpg">
+  <link id="shortcut-icon" rel="shortcut icon" href="https://img5.pic.in.th/file/secure-sv1/227375.jpg">
+
+  <!-- ============================================ -->
+  <!-- FONT FAMILY LINKS (THAI FONTS) -->
+  <!-- ============================================ -->
+  <!-- คำอธิบาย: แต่ละ link เป็น Google Fonts สำหรับภาษาไทยโดยเฉพาะ -->
+  <!-- แต่ละ font จะถูก disable ไว้ก่อน (disabled attribute) -->
+  <!-- จะเปิดใช้งานผ่าน JavaScript เมื่อผู้ใช้เลือกฟอนต์ใน Settings -->
+
+  <!-- Default font (Space Mono + Syne + Sarabun) -->
+  <link id="font-default"
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=Sarabun:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Thai handwriting fonts -->
+  <link id="font-playpen" href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Thai:wght@100..800&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- Kanit font (popular Thai font) -->
+  <link id="font-kanit"
+    href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playpen+Sans+Thai:wght@100..800&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- Combination fonts (Kanit + Prompt) -->
+  <link id="font-kanit-prompt"
+    href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playpen+Sans+Thai:wght@100..800&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- Noto Sans Thai (clean, readable) -->
+  <link id="font-noto"
+    href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+Thai:wght@100..900&family=Playpen+Sans+Thai:wght@100..800&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- Itim (cute handwriting) -->
+  <link id="font-itim"
+    href="https://fonts.googleapis.com/css2?family=Itim&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+Thai:wght@100..900&family=Playpen+Sans+Thai:wght@100..800&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- Complete set (K2D + Sriracha) -->
+  <link id="font-complete"
+    href="https://fonts.googleapis.com/css2?family=Itim&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+Thai:wght@100..900&family=Playpen+Sans+Thai:wght@100..800&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sriracha&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- Anuphan (modern Thai font) -->
+  <link id="font-anuphan" href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- Bai Jamjuree -->
+  <link id="font-baijamjuree"
+    href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- Chakra Petch (geometric) -->
+  <link id="font-chakrapetch"
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- Charm (Thai handwriting) -->
+  <link id="font-charm" href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet"
+    disabled>
+
+  <!-- Charmonman (rounded Thai font) -->
+  <link id="font-charmonman" href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- IBM Plex Sans Thai -->
+  <link id="font-ibmplex"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- K2D (squared font) -->
+  <link id="font-k2d"
+    href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- Mali (handwriting) -->
+  <link id="font-mali"
+    href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- Mitr (bold, easy to read) -->
+  <link id="font-mitr" href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- Niramit -->
+  <link id="font-niramit"
+    href="https://fonts.googleapis.com/css2?family=Niramit:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- Prompt -->
+  <link id="font-prompt"
+    href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- Sarabun (standard Thai font) -->
+  <link id="font-sarabun"
+    href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- Sriracha -->
+  <link id="font-sriracha" href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet"
+    disabled>
+
+  <!-- Taviraj (serif) -->
+  <link id="font-taviraj"
+    href="https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- Trirong (serif) -->
+  <link id="font-trirong"
+    href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" disabled>
+
+  <!-- ============================================ -->
+  <!-- EXTERNAL LIBRARIES -->
+  <!-- ============================================-->
+  <!-- React 18 (production build) -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- Babel for JSX transformation -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Tailwind CSS (utility classes) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ============================================ -->
+  <!-- APP CONFIGURATION -->
+  <!-- ============================================ -->
+  <!-- หมายเหตุ: ต้องเปลี่ยน WEB_APP_URL เป็น URL ของ Google Apps Script จริง -->
+  <script>
+    window.APP_CONFIG = {
+      WEB_APP_URL: "https://script.google.com/macros/s/AKfycbwlrqOFzg8NqNzOqpuZiitWRzQPCmFuHXijy5IOfQNRfLG2KXzoVIk0yGtxlJx0SNIJSg/exec"
+    };
+
+    /* Helper function for API calls */
+    window.fetchAPI = function (payload) {
+      return fetch(window.APP_CONFIG.WEB_APP_URL, {
+        method: "POST",
+        redirect: "follow",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      }).then(res => res.json());
+    };
+  </script>
+
+  <title id="site-title">NEXO</title>
+
+  <style>
+    /* ============================================ */
+    /* RESET & BASE STYLES                           */
+    /* ============================================ */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #0a0a0a;
+    }
+
+    /* ============================================ */
+    /* CSS CUSTOM PROPERTIES (VARIABLES)            */
+    /* ============================================ */
+    :root {
+      --ink: #0a0a0a;
+      /* Text color on light backgrounds */
+      --paper: #f0ede6;
+      /* Background color for light theme */
+      --accent: #e8ff47;
+      /* Primary accent color (lime) */
+      --accent2: #ff4757;
+      /* Secondary accent color (red) */
+      --dim: #1a1a1a;
+      /* Dark surface background */
+      --muted: #2e2e2e;
+      /* Muted background for inputs */
+      --text-muted: #888;
+      /* Muted text color */
+      --border: #2e2e2e;
+      /* Border color */
+      --mono: 'Space Mono', monospace;
+      /* Monospace font */
+      --display: 'Syne', sans-serif;
+      /* Display font for headings */
+      --body: 'Sarabun', sans-serif;
+      /* Body text font */
+      --bg-from: #0a0a0a;
+      /* Gradient start color */
+      --bg-to: #1a1a1a;
+      /* Gradient end color */
+    }
+
+    /* ============================================ */
+    /* FONT FAMILY CLASSES                           */
+    /* ============================================ */
+    /* แต่ละ class จะ override CSS variables ด้วยฟอนต์ที่เลือก */
+    .font-playpen {
+      --mono: 'Playpen Sans Thai', cursive;
+      --display: 'Playpen Sans Thai', cursive;
+      --body: 'Playpen Sans Thai', cursive;
+    }
+
+    .font-kanit {
+      --mono: 'Kanit', sans-serif;
+      --display: 'Kanit', sans-serif;
+      --body: 'Kanit', sans-serif;
+    }
+
+    .font-kanit-prompt {
+      --mono: 'Prompt', sans-serif;
+      --display: 'Kanit', sans-serif;
+      --body: 'Prompt', sans-serif;
+    }
+
+    .font-noto {
+      --mono: 'Noto Sans Thai', sans-serif;
+      --display: 'Kanit', sans-serif;
+      --body: 'Noto Sans Thai', sans-serif;
+    }
+
+    .font-itim {
+      --mono: 'Itim', cursive;
+      --display: 'Kanit', sans-serif;
+      --body: 'Itim', cursive;
+    }
+
+    .font-complete {
+      --mono: 'K2D', sans-serif;
+      --display: 'Sriracha', cursive;
+      --body: 'K2D', sans-serif;
+    }
+
+    /* ============================================ */
+    /* UTILITY CLASSES                               */
+    /* ============================================ */
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* ============================================ */
+    /* ANIMATIONS                                   */
+    /* ============================================ */
+    @keyframes scan {
+      0% {
+        transform: translateY(-100%);
+      }
+
+      100% {
+        transform: translateY(100vh);
+      }
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes pulse-glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(232, 255, 71, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 0 0 8px rgba(232, 255, 71, 0);
+      }
+    }
+
+    @keyframes ticker {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ============================================ */
+    /* ✨ NEW: GLITCH EFFECT                        */
+    /* ============================================ */
+    /* สร้างเอฟเฟกต์ตัวอักษรกระตุก (glitch) */
+    @keyframes glitch1 {
+
+      0%,
+      85%,
+      100% {
+        clip-path: inset(0 0 98% 0);
+        transform: translateX(0);
+        opacity: 0;
+      }
+
+      87% {
+        clip-path: inset(10% 0 60% 0);
+        transform: translateX(-4px);
+        opacity: 0.8;
+        color: #ff4757;
+      }
+
+      89% {
+        clip-path: inset(40% 0 30% 0);
+        transform: translateX(4px);
+        opacity: 0.8;
+      }
+
+      91% {
+        clip-path: inset(70% 0 5% 0);
+        transform: translateX(-2px);
+        opacity: 0.6;
+      }
+
+      93% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes glitch2 {
+
+      0%,
+      88%,
+      100% {
+        clip-path: inset(0 0 98% 0);
+        transform: translateX(0);
+        opacity: 0;
+      }
+
+      90% {
+        clip-path: inset(60% 0 10% 0);
+        transform: translateX(3px);
+        opacity: 0.7;
+        color: #00ffcc;
+      }
+
+      92% {
+        clip-path: inset(20% 0 50% 0);
+        transform: translateX(-3px);
+        opacity: 0.7;
+      }
+
+      94% {
+        opacity: 0;
+      }
+    }
+
+    .glitch {
+      position: relative;
+      display: inline-block;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      inset: 0;
+      font: inherit;
+      letter-spacing: inherit;
+      line-height: inherit;
+    }
+
+    .glitch::before {
+      animation: glitch1 6s infinite;
+    }
+
+    .glitch::after {
+      animation: glitch2 6s infinite 0.15s;
+    }
+
+    /* ============================================ */
+    /* ✨ NEW: SHIMMER ANIMATION                    */
+    /* ============================================ */
+    /* ใช้กับ progress bar เพื่อให้มีแสงวิ่ง */
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(200%);
+      }
+    }
+
+    .shimmer-bar {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shimmer-bar::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%);
+      animation: shimmer 2s infinite;
+      width: 60%;
+    }
+
+    /* ============================================ */
+    /* ✨ NEW: CARD HOVER EFFECTS                   */
+    /* ============================================ */
+    /* การ์ดงานมีการขยายเล็กน้อยเมื่อ hover */
+    .task-card {
+      transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.18s ease;
+      cursor: pointer;
+    }
+
+    .task-card:hover {
+      transform: scale(1.025) translateY(-1px);
+    }
+
+    .task-card:active {
+      transform: scale(0.975);
+    }
+
+    .task-card-guest {
+      transition: transform 0.18s ease;
+    }
+
+    .task-card-guest:hover {
+      transform: translateX(3px);
+    }
+
+    /* ============================================ */
+    /* ✨ NEW: TOAST ANIMATION                      */
+    /* ============================================ */
+    /* แจ้งเตือนเลื่อนเข้ามาจากขวา */
+    @keyframes toastIn {
+      from {
+        transform: translateX(120%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes toastOut {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateX(120%);
+        opacity: 0;
+      }
+    }
+
+    .toast-enter {
+      animation: toastIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    .toast-exit {
+      animation: toastOut 0.3s ease both;
+    }
+
+    /* ============================================ */
+    /* ✨ NEW: NAV BUTTON GLOW                      */
+    /* ============================================ */
+    /* ปุ่มเพิ่มงานมีการเรืองแสงเป็นจังหวะ */
+    @keyframes navGlow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 8px rgba(232, 255, 71, 0.3);
+      }
+
+      50% {
+        box-shadow: 0 0 20px rgba(232, 255, 71, 0.7), 0 0 40px rgba(232, 255, 71, 0.2);
+      }
+    }
+
+    .nav-add-btn {
+      animation: navGlow 2.5s ease-in-out infinite;
+    }
+
+    /* ============================================ */
+    /* EXISTING ANIMATIONS                          */
+    /* ============================================ */
+    .animate-slideInUp {
+      animation: slideInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 0.3s ease both;
+    }
+
+    /* เส้นสแกนแนวตั้งเคลื่อนที่ */
+    .scan-line {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--accent), transparent);
+      animation: scan 8s linear infinite;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    .blink {
+      animation: blink 1s step-end infinite;
+    }
+
+    .ticker-wrap {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-inner {
+      display: inline-flex;
+      animation: ticker 20s linear infinite;
+    }
+
+    .spin-slow {
+      animation: spin 8s linear infinite;
+    }
+
+    .pulse-accent {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    .theme-gradient {
+      background: linear-gradient(135deg, var(--bg-from), var(--bg-to)) !important;
+    }
+
+    /* ============================================ */
+    /* THEME VARIATIONS                             */
+    /* ============================================ */
+    .theme-light {
+      --ink: #0a0a0a;
+      --paper: #0a0a0a;
+      --dim: #e8e4dc;
+      --muted: #d0ccc3;
+      --text-muted: #666;
+      --border: #c8c4bc;
+      background: #f0ede6 !important;
+      color: #0a0a0a;
+    }
+
+    .theme-neon {
+      --ink: #080816;
+      --paper: #0f0f23;
+      --accent: #00ffcc;
+      --dim: #12122a;
+      --muted: #1a1a35;
+      --text-muted: #5566aa;
+      --border: #1e1e40;
+    }
+
+    .theme-rust {
+      --accent: #ff6b35;
+      --accent2: #ffd700;
+    }
+
+    /* ============================================ */
+    /* INPUT STYLES                                  */
+    /* ============================================ */
+    /* ทำให้ date picker เป็นสีขาว (invert) */
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+    }
+
+    .theme-light input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(0);
+    }
+
+    /* ============================================ */
+    /* BACKGROUND EFFECTS                            */
+    /* ============================================ */
+    /* ตารางเส้นทับ (grid noise) */
+    .grid-noise {
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255, 255, 255, 0.03) 39px, rgba(255, 255, 255, 0.03) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255, 255, 255, 0.03) 39px, rgba(255, 255, 255, 0.03) 40px);
+    }
+
+    /* ============================================ */
+    /* STATUS STYLES (left border)                  */
+    /* ============================================ */
+    .status-todo {
+      border-left: 3px solid #555;
+    }
+
+    .status-doing {
+      border-left: 3px solid var(--accent);
+    }
+
+    .status-done {
+      border-left: 3px solid #444;
+      opacity: 0.55;
+    }
+
+    /* ============================================ */
+    /* CHANNEL COLOR STYLES                          */
+    /* ============================================ */
+    /* สีตามช่องทางการติดต่อ */
+    .ch-LINE {
+      background: #1a2e1a;
+      color: #7ec87e;
+      border-color: #2d4d2d;
+    }
+
+    .ch-FB,
+    .ch-FACEBOOK {
+      background: #1a1d2e;
+      color: #6b89c8;
+      border-color: #2a2f4d;
+    }
+
+    .ch-IG {
+      background: #2e1a24;
+      color: #c87ea0;
+      border-color: #4d2a3a;
+    }
+
+    .ch-DISCORD {
+      background: #1e1a2e;
+      color: #8b7ec8;
+      border-color: #382a4d;
+    }
+
+    .ch-other {
+      background: #1e1e1e;
+      color: #888;
+      border-color: #333;
+    }
+
+    /* ============================================ */
+    /* MODAL STYLES                                   */
+    /* ============================================ */
+    .modal-overlay {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+    }
+
+    /* ============================================ */
+    /* SCROLLBAR STYLES                              */
+    /* ============================================ */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #111;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    /* ============================================ */
+    /* REACT HOOKS IMPORTS (destructuring)          */
+    /* ============================================ */
+    const { useState, useMemo, useEffect, useCallback, useRef } = React;
+
+    /* ============================================ */
+    /* ICON COMPONENTS                              */
+    /* ============================================ */
+    /* 
+      icoIcons: รวมไอคอน SVG ทั้งหมดที่ใช้ในแอป
+      แต่ละฟังก์ชันคืนค่า JSX ของ SVG
+    */
+    const Ico = {
+      Plus: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" width="18" height="18"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>,
+      Home: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>,
+      List: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" width="18" height="18"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>,
+      Check: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" width="14" height="14"><polyline points="20 6 9 17 4 12" /></svg>,
+      Clock: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" width="12" height="12"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>,
+      Loader: ({ size = 16 }) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" width={size} height={size}><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" /></svg>,
+      Cal: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" width="12" height="12"><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>,
+      Trash: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" width="16" height="16"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /><line x1="10" y1="11" x2="10" y2="17" /><line x1="14" y1="11" x2="14" y2="17" /></svg>,
+      Chevron: ({ dir = "right" }) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" width="16" height="16" style={{ transform: dir === 'left' ? 'rotate(180deg)' : '' }}><polyline points="9 18 15 12 9 6" /></svg>,
+      Search: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" width="16" height="16"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>,
+      Settings: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" width="14" height="14"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg>,
+      Copy: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" width="14" height="14"><rect x="9" y="9" width="13" height="13" rx="2" /><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" /></svg>,
+      Eye: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" width="14" height="14"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>,
+      EyeOff: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" width="14" height="14"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" /><line x1="1" y1="1" x2="23" y2="23" /></svg>,
+      Image: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>,
+    };
+
+    /* ============================================ */
+    /* FONT OPTIONS DATA                             */
+    /* ============================================ */
+    /* รายการฟอนต์ทั้งหมดที่ผู้ใช้สามารถเลือก */
+    const FONT_OPTIONS = [
+      { id: 'default', name: 'Default', class: '', description: 'Space Mono + Syne + Sarabun' },
+      { id: 'playpen', name: 'Playpen Sans Thai', class: 'font-playpen', description: 'ฟอนต์ลายมือภาษาไทย น่ารัก' },
+      { id: 'kanit', name: 'Kanit', class: 'font-kanit', description: 'ฟอนต์ Kanit สวย ทันสมัย' },
+      { id: 'kanit-prompt', name: 'Kanit + Prompt', class: 'font-kanit-prompt', description: 'ผสมผสาน Kanit และ Prompt' },
+      { id: 'noto', name: 'Noto Sans Thai', class: 'font-noto', description: 'Noto Sans Thai อ่านง่าย สบายตา' },
+      { id: 'itim', name: 'Itim', class: 'font-itim', description: 'ฟอนต์ลายมือ Itim น่ารัก สดใส' },
+      { id: 'complete', name: 'Complete Set', class: 'font-complete', description: 'K2D + Sriracha + อื่นๆ ครบครัน' },
+      { id: 'anuphan', name: 'Anuphan', class: 'font-anuphan', description: 'Anuphan ฟอนต์โมเดิร์น อ่านง่าย' },
+      { id: 'baijamjuree', name: 'Bai Jamjuree', class: 'font-baijamjuree', description: 'Bai Jamjuree ฟอนต์สวย คลาสสิก' },
+      { id: 'chakrapetch', name: 'Chakra Petch', class: 'font-chakrapetch', description: 'Chakra Petch ฟอนต์ทรงเรขาคณิต' },
+      { id: 'charm', name: 'Charm', class: 'font-charm', description: 'Charm ฟอนต์ลายมือไทย' },
+      { id: 'charmonman', name: 'Charmonman', class: 'font-charmonman', description: 'Charmonman ฟอนต์หัวกลม น่ารัก' },
+      { id: 'ibmplex', name: 'IBM Plex Sans Thai', class: 'font-ibmplex', description: 'IBM Plex Sans Thai ดูดี มีสไตล์' },
+      { id: 'k2d', name: 'K2D', class: 'font-k2d', description: 'K2D ฟอนต์เหลี่ยม ทันสมัย' },
+      { id: 'mali', name: 'Mali', class: 'font-mali', description: 'Mali ฟอนต์ลายมือน่ารัก' },
+      { id: 'mitr', name: 'Mitr', class: 'font-mitr', description: 'Mitr ฟอนต์เข้ม สบายตา' },
+      { id: 'niramit', name: 'Niramit', class: 'font-niramit', description: 'Niramit ฟอนต์สวย โมเดิร์น' },
+      { id: 'prompt', name: 'Prompt', class: 'font-prompt', description: 'Prompt ฟอนต์เรียบหรู' },
+      { id: 'sarabun', name: 'Sarabun', class: 'font-sarabun', description: 'Sarabun ฟอนต์มาตรฐาน อ่านง่าย' },
+      { id: 'sriracha', name: 'Sriracha', class: 'font-sriracha', description: 'Sriracha ฟอนต์ลายมือสนุกๆ' },
+      { id: 'taviraj', name: 'Taviraj', class: 'font-taviraj', description: 'Taviraj ฟอนต์มีเชิง สง่างาม' },
+      { id: 'trirong', name: 'Trirong', class: 'font-trirong', description: 'Trirong ฟอนต์มีเชิง คลาสสิก' },
+    ];
+
+    /* ============================================ */
+    /* UI THEMES DATA                                */
+    /* ============================================ */
+    /* รายการธีมสีทั้งหมด (ย่อเหลือแค่ส่วนสำคัญ + ตัวอย่าง) */
+    const UI_THEMES = [
+      { id: 'dark', name: '⬛ Dark', class: 'theme-dark', accent: '#e8ff47', accent2: '#ff4757', bgFrom: '#0a0a0a', bgTo: '#1a1a1a' },
+      { id: 'light', name: '⬜ Light', class: '', accent: '#111', accent2: '#ff4757', bgFrom: '#f0ede6', bgTo: '#e8e4dc' },
+      { id: 'neon', name: '💚 Neon', class: 'theme-neon', accent: '#00ffcc', accent2: '#ff00ff', bgFrom: '#080816', bgTo: '#12122a' },
+      { id: 'rust', name: '🟧 Rust', class: 'theme-rust', accent: '#ff6b35', accent2: '#ffd700', bgFrom: '#1a0f0a', bgTo: '#2a1a12' },
+      { id: 'ocean', name: '🌊 Ocean', class: '', accent: '#00a8ff', accent2: '#ff6b6b', bgFrom: '#0a1a2a', bgTo: '#1a2a3a' },
+      { id: 'forest', name: '🌲 Forest', class: '', accent: '#4ecdc4', accent2: '#ffe66d', bgFrom: '#0a1f0a', bgTo: '#1a2f1a' },
+      { id: 'sunset', name: '🌅 Sunset', class: '', accent: '#ff7e5f', accent2: '#feb47b', bgFrom: '#2a1a1a', bgTo: '#3a2a1a' },
+      { id: 'midnight', name: '🌙 Midnight', class: '', accent: '#a55eea', accent2: '#ff6b6b', bgFrom: '#0a0a1a', bgTo: '#1a1a2a' },
+      { id: 'cherry', name: '🍒 Cherry', class: '', accent: '#ff6b6b', accent2: '#4ecdc4', bgFrom: '#2a0a0a', bgTo: '#3a1a1a' },
+      { id: 'lavender', name: '💜 Lavender', class: '', accent: '#b8a9d9', accent2: '#ffb8b8', bgFrom: '#1a1a2a', bgTo: '#2a2a3a' },
+      { id: 'cyber-1', name: '🤖 Cyber Red', class: '', accent: '#ff3366', accent2: '#33ffcc', bgFrom: '#000000', bgTo: '#1a1f1f' },
+      { id: 'cyber-2', name: '⚡ Cyber Blue', class: '', accent: '#33ccff', accent2: '#ff3366', bgFrom: '#0a0a14', bgTo: '#1a1a24' },
+      { id: 'cyber-3', name: '💀 Cyber Green', class: '', accent: '#33ff99', accent2: '#ff3399', bgFrom: '#0a140a', bgTo: '#1a241a' },
+      { id: 'cyber-4', name: '🔮 Cyber Purple', class: '', accent: '#9966ff', accent2: '#ff66b2', bgFrom: '#140a1a', bgTo: '#241a2a' },
+      { id: 'cyber-5', name: '🔥 Cyber Orange', class: '', accent: '#ff9933', accent2: '#33ffff', bgFrom: '#1a0f0a', bgTo: '#2a1f1a' },
+      { id: 'mono-1', name: '⚫ Pure Black', class: '', accent: '#ffffff', accent2: '#cccccc', bgFrom: '#000000', bgTo: '#111111' },
+      { id: 'mono-5', name: '🪨 Charcoal', class: '', accent: '#00ffaa', accent2: '#ff00aa', bgFrom: '#1e1e1e', bgTo: '#2e2e2e' },
+      { id: 'lux-3', name: '🥇 Gold', class: '', accent: '#ffd700', accent2: '#daa520', bgFrom: '#2a1f0a', bgTo: '#3a2f1a' },
+      { id: 'lux-9', name: '🔴 Ruby', class: '', accent: '#e0115f', accent2: '#c0114f', bgFrom: '#2a0a14', bgTo: '#3a1a24' },
+      { id: 'neonpop-1', name: '💚 Acid Pop', class: 'theme-neon', accent: '#B0FF57', accent2: '#FF57B0', bgFrom: '#0A1F0A', bgTo: '#1A2F1A' },
+      { id: 'sweetblush-1', name: '🌸 Sweet Blush', class: '', accent: '#FFB7C5', accent2: '#B45F7A', bgFrom: '#FFF0F3', bgTo: '#FFD9E2' },
+      { id: 'extra-3', name: '🌌 Cosmic Void', class: '', accent: '#9C27B0', accent2: '#E91E63', bgFrom: '#000000', bgTo: '#1A0033' },
+      { id: 'extra-6', name: '🎭 Masquerade', class: '', accent: '#FF4081', accent2: '#7C4DFF', bgFrom: '#1A0F1A', bgTo: '#2A1F2A' },
+      { id: 'extra-10', name: '🎪 Carnival', class: '', accent: '#FF5252', accent2: '#FFD740', bgFrom: '#2A0F0F', bgTo: '#3A1F1F' },
+      { id: 'dark-1', name: '⬛ Pure Dark', class: '', accent: '#e8ff47', accent2: '#ff4757', bgFrom: '#0a0a0a', bgTo: '#1a1a1a' },
+      { id: 'dark-2', name: '⬛ Dark Matter', class: '', accent: '#00ffaa', accent2: '#ff3366', bgFrom: '#000000', bgTo: '#1a1a1a' },
+      { id: 'dark-3', name: '⬛ Void', class: '', accent: '#bb86fc', accent2: '#03dac6', bgFrom: '#121212', bgTo: '#1e1e1e' },
+      { id: 'dark-4', name: '⬛ Night Rider', class: '', accent: '#cf6679', accent2: '#bb86fc', bgFrom: '#0d0d0d', bgTo: '#1a1a1a' },
+      { id: 'dark-5', name: '⬛ Carbon', class: '', accent: '#ff7595', accent2: '#6effe8', bgFrom: '#1c1c1c', bgTo: '#2c2c2c' },
+      { id: 'dark-6', name: '⬛ Onyx', class: '', accent: '#ffb74d', accent2: '#64b5f6', bgFrom: '#212121', bgTo: '#313131' },
+      { id: 'dark-7', name: '⬛ Jet Black', class: '', accent: '#f06292', accent2: '#4fc3f7', bgFrom: '#1e1e1e', bgTo: '#2e2e2e' },
+      { id: 'dark-8', name: '⬛ Charcoal', class: '', accent: '#ff8a65', accent2: '#81c784', bgFrom: '#263238', bgTo: '#37474f' },
+      { id: 'dark-9', name: '⬛ Graphite', class: '', accent: '#ff80ab', accent2: '#80deea', bgFrom: '#2c2c2c', bgTo: '#3c3c3c' },
+      { id: 'dark-10', name: '⬛ Raven', class: '', accent: '#d4e157', accent2: '#ff8a80', bgFrom: '#2a2a2a', bgTo: '#3a3a3a' },
+
+      // ===== LIGHT THEMES (10) =====
+      { id: 'light-1', name: '⬜ Pure Light', class: 'theme-light', accent: '#2563eb', accent2: '#dc2626', bgFrom: '#f8fafc', bgTo: '#e2e8f0' },
+      { id: 'light-2', name: '⬜ Ivory', class: 'theme-light', accent: '#7c3aed', accent2: '#db2777', bgFrom: '#fffbeb', bgTo: '#fef3c7' },
+      { id: 'light-3', name: '⬜ Pearl', class: 'theme-light', accent: '#0284c7', accent2: '#b91c1c', bgFrom: '#f0f9ff', bgTo: '#e0f2fe' },
+      { id: 'light-4', name: '⬜ Snow', class: 'theme-light', accent: '#059669', accent2: '#d97706', bgFrom: '#ecfdf5', bgTo: '#d1fae5' },
+      { id: 'light-5', name: '⬜ Cream', class: 'theme-light', accent: '#9333ea', accent2: '#ea580c', bgFrom: '#fefce8', bgTo: '#fef9c3' },
+      { id: 'light-6', name: '⬜ Linen', class: 'theme-light', accent: '#2563eb', accent2: '#c2410c', bgFrom: '#fff7ed', bgTo: '#ffedd5' },
+      { id: 'light-7', name: '⬜ Alabaster', class: 'theme-light', accent: '#0d9488', accent2: '#b45309', bgFrom: '#f0fdfa', bgTo: '#ccfbf1' },
+      { id: 'light-8', name: '⬜ Porcelain', class: 'theme-light', accent: '#4f46e5', accent2: '#be185d', bgFrom: '#eef2ff', bgTo: '#e0e7ff' },
+      { id: 'light-9', name: '⬜ Marble', class: 'theme-light', accent: '#0891b2', accent2: '#9a3412', bgFrom: '#f0f9ff', bgTo: '#e6f7ff' },
+      { id: 'light-10', name: '⬜ Cotton', class: 'theme-light', accent: '#2e7d32', accent2: '#c2185b', bgFrom: '#f1f8e9', bgTo: '#dcedc8' },
+
+      // ===== NEON/VIBRANT (20) =====
+      { id: 'neon-1', name: '💚 Neon Classic', class: 'theme-neon', accent: '#e8ff47', accent2: '#ff4757', bgFrom: '#0a0a0a', bgTo: '#1a1a1a' },
+      { id: 'neon-2', name: '💚 Cyber Green', class: 'theme-neon', accent: '#00ff9d', accent2: '#ff00aa', bgFrom: '#0a140a', bgTo: '#1a241a' },
+      { id: 'neon-3', name: '💙 Electric Blue', class: 'theme-neon', accent: '#00f0ff', accent2: '#ff44cc', bgFrom: '#0a1424', bgTo: '#1a2434' },
+      { id: 'neon-4', name: '💜 Ultra Violet', class: 'theme-neon', accent: '#b700ff', accent2: '#00ffcc', bgFrom: '#1a0a24', bgTo: '#2a1a34' },
+      { id: 'neon-5', name: '❤️‍🔥 Hot Pink', class: 'theme-neon', accent: '#ff44aa', accent2: '#44ffaa', bgFrom: '#240a1a', bgTo: '#341a2a' },
+      { id: 'neon-6', name: '🧡 Atomic Orange', class: 'theme-neon', accent: '#ff8800', accent2: '#00ff88', bgFrom: '#241a0a', bgTo: '#342a1a' },
+      { id: 'neon-7', name: '💛 Toxic Yellow', class: 'theme-neon', accent: '#eeff00', accent2: '#ff00ee', bgFrom: '#1a240a', bgTo: '#2a341a' },
+      { id: 'neon-8', name: '🤍 Quantum White', class: 'theme-neon', accent: '#ffffff', accent2: '#00ffff', bgFrom: '#1a1a1a', bgTo: '#2a2a2a' },
+      { id: 'neon-9', name: '💎 Laser Red', class: 'theme-neon', accent: '#ff0000', accent2: '#00ffff', bgFrom: '#1a0a0a', bgTo: '#2a1a1a' },
+      { id: 'neon-10', name: '💠 Cyan Pulse', class: 'theme-neon', accent: '#0ff', accent2: '#f0f', bgFrom: '#001a1a', bgTo: '#002a2a' },
+      { id: 'neon-11', name: '🌈 Rainbow Core', class: 'theme-neon', accent: '#ff44aa', accent2: '#44ffaa', bgFrom: '#1a0a1a', bgTo: '#2a1a2a' },
+      { id: 'neon-12', name: '⚡ Neon Storm', class: 'theme-neon', accent: '#7fff00', accent2: '#ff00ff', bgFrom: '#0f1a0f', bgTo: '#1f2a1f' },
+      { id: 'neon-13', name: '🔥 Lava Glow', class: 'theme-neon', accent: '#ff5500', accent2: '#ff00aa', bgFrom: '#1a0f0a', bgTo: '#2a1f1a' },
+      { id: 'neon-14', name: '🧊 Arctic Glow', class: 'theme-neon', accent: '#44ddff', accent2: '#ff88cc', bgFrom: '#0a1a2a', bgTo: '#1a2a3a' },
+      { id: 'neon-15', name: '🍬 Candy Floss', class: 'theme-neon', accent: '#ff88ff', accent2: '#88ff88', bgFrom: '#1a0a1f', bgTo: '#2a1a2f' },
+      { id: 'neon-16', name: '🦠 Biohazard', class: 'theme-neon', accent: '#22ff22', accent2: '#ff2222', bgFrom: '#0a1a0a', bgTo: '#1a2a1a' },
+      { id: 'neon-17', name: '⚛️ Quantum Glow', class: 'theme-neon', accent: '#ffaa00', accent2: '#00aaff', bgFrom: '#1a1a0a', bgTo: '#2a2a1a' },
+      { id: 'neon-18', name: '💫 Plasma', class: 'theme-neon', accent: '#aa44ff', accent2: '#44ffaa', bgFrom: '#140a1a', bgTo: '#241a2a' },
+      { id: 'neon-19', name: '🎆 Synthwave', class: 'theme-neon', accent: '#ff6b9d', accent2: '#9b6bff', bgFrom: '#2a0f1a', bgTo: '#3a1f2a' },
+      { id: 'neon-20', name: '🌌 Vaporwave', class: 'theme-neon', accent: '#ff71ce', accent2: '#01cdfe', bgFrom: '#1a1a2a', bgTo: '#2a2a3a' },
+
+      // ===== OCEAN/WATER (10) =====
+      { id: 'ocean-1', name: '🌊 Deep Ocean', class: '', accent: '#00a8ff', accent2: '#ff6b6b', bgFrom: '#0a1a2a', bgTo: '#1a2a3a' },
+      { id: 'ocean-2', name: '🏝️ Tropical', class: '', accent: '#00d2d3', accent2: '#ff9f43', bgFrom: '#0a2a2a', bgTo: '#1a3a3a' },
+      { id: 'ocean-3', name: '🌊 Pacific', class: '', accent: '#4bcffa', accent2: '#ff5e57', bgFrom: '#0a1f2a', bgTo: '#1a2f3a' },
+      { id: 'ocean-4', name: '🐋 Arctic Sea', class: '', accent: '#7efff5', accent2: '#ffb8b8', bgFrom: '#0a2a3a', bgTo: '#1a3a4a' },
+      { id: 'ocean-5', name: '🪸 Coral Reef', class: '', accent: '#ff7f7f', accent2: '#7f9fff', bgFrom: '#2a1a1a', bgTo: '#3a2a2a' },
+      { id: 'ocean-6', name: '🐠 Lagoon', class: '', accent: '#1bacbf', accent2: '#f8c291', bgFrom: '#0a2a3a', bgTo: '#1a3a4a' },
+      { id: 'ocean-7', name: '🌊 Tsunami', class: '', accent: '#0abde3', accent2: '#ee5a24', bgFrom: '#0a1a2a', bgTo: '#1a2a3a' },
+      { id: 'ocean-8', name: '🧜 Mermaid', class: '', accent: '#5f9ea0', accent2: '#db7093', bgFrom: '#1a2a3a', bgTo: '#2a3a4a' },
+      { id: 'ocean-9', name: '🌊 Abyss', class: '', accent: '#48d1cc', accent2: '#ff6347', bgFrom: '#0a0a1a', bgTo: '#1a1a2a' },
+      { id: 'ocean-10', name: '💧 Nautical', class: '', accent: '#87ceeb', accent2: '#ffa07a', bgFrom: '#1a2a3a', bgTo: '#2a3a4a' },
+
+      // ===== FOREST/NATURE (10) =====
+      { id: 'forest-1', name: '🌲 Pine Forest', class: '', accent: '#4ecdc4', accent2: '#ffe66d', bgFrom: '#0a1f0a', bgTo: '#1a2f1a' },
+      { id: 'forest-2', name: '🍃 Jungle', class: '', accent: '#6ab04c', accent2: '#f6e58d', bgFrom: '#0a2a0a', bgTo: '#1a3a1a' },
+      { id: 'forest-3', name: '🌿 Meadow', class: '', accent: '#badc58', accent2: '#ff7979', bgFrom: '#1a2a1a', bgTo: '#2a3a2a' },
+      { id: 'forest-4', name: '🍂 Autumn', class: '', accent: '#e67e22', accent2: '#f1c40f', bgFrom: '#2a1a0a', bgTo: '#3a2a1a' },
+      { id: 'forest-5', name: '🌸 Cherry Blossom', class: '', accent: '#ffb7c5', accent2: '#a8e6cf', bgFrom: '#2a1a1a', bgTo: '#3a2a2a' },
+      { id: 'forest-6', name: '🌵 Desert', class: '', accent: '#f39c12', accent2: '#e67e22', bgFrom: '#2a2a1a', bgTo: '#3a3a2a' },
+      { id: 'forest-7', name: '🌴 Rainforest', class: '', accent: '#2ecc71', accent2: '#f1c40f', bgFrom: '#0a2a1a', bgTo: '#1a3a2a' },
+      { id: 'forest-8', name: '🏔️ Mountain', class: '', accent: '#3498db', accent2: '#95a5a6', bgFrom: '#1a2a3a', bgTo: '#2a3a4a' },
+      { id: 'forest-9', name: '🌾 Prairie', class: '', accent: '#f0b27a', accent2: '#7dcea0', bgFrom: '#2a2a1a', bgTo: '#3a3a2a' },
+      { id: 'forest-10', name: '🍇 Vineyard', class: '', accent: '#8e44ad', accent2: '#f39c12', bgFrom: '#1a0a2a', bgTo: '#2a1a3a' },
+
+      // ===== SUNSET/SUNRISE (10) =====
+      { id: 'sunset-1', name: '🌅 Golden Hour', class: '', accent: '#ff7e5f', accent2: '#feb47b', bgFrom: '#2a1a1a', bgTo: '#3a2a1a' },
+      { id: 'sunset-2', name: '🌇 Dusk', class: '', accent: '#ff6b6b', accent2: '#4ecdc4', bgFrom: '#2a1a2a', bgTo: '#3a2a3a' },
+      { id: 'sunset-3', name: '🌆 Twilight', class: '', accent: '#a8e6cf', accent2: '#ff8b94', bgFrom: '#1a1a2a', bgTo: '#2a2a3a' },
+      { id: 'sunset-4', name: '🌃 Midnight', class: '', accent: '#a55eea', accent2: '#ff6b6b', bgFrom: '#0a0a1a', bgTo: '#1a1a2a' },
+      { id: 'sunset-5', name: '🌌 Night Sky', class: '', accent: '#b8a9d9', accent2: '#ffb8b8', bgFrom: '#1a1a2a', bgTo: '#2a2a3a' },
+      { id: 'sunset-6', name: '🔴 Mars', class: '', accent: '#e0115f', accent2: '#c0114f', bgFrom: '#2a0a14', bgTo: '#3a1a24' },
+      { id: 'sunset-7', name: '🟠 Solstice', class: '', accent: '#ff9933', accent2: '#33ffff', bgFrom: '#1a0f0a', bgTo: '#2a1f1a' },
+      { id: 'sunset-8', name: '🌄 Dawn', class: '', accent: '#ffd166', accent2: '#ff9eaa', bgFrom: '#2a1a0a', bgTo: '#3a2a1a' },
+      { id: 'sunset-9', name: '🌤️ Afterglow', class: '', accent: '#ffb347', accent2: '#ff6961', bgFrom: '#2a2a1a', bgTo: '#3a3a2a' },
+      { id: 'sunset-10', name: '🌠 Meteor', class: '', accent: '#ff4d4d', accent2: '#4d79ff', bgFrom: '#1a0a0a', bgTo: '#2a1a1a' },
+
+      // ===== FRUIT/FOOD (10) =====
+      { id: 'fruit-1', name: '🍒 Cherry', class: '', accent: '#ff6b6b', accent2: '#4ecdc4', bgFrom: '#2a0a0a', bgTo: '#3a1a1a' },
+      { id: 'fruit-2', name: '🍋 Lemon', class: '', accent: '#ffe66d', accent2: '#ff6b6b', bgFrom: '#2a2a0a', bgTo: '#3a3a1a' },
+      { id: 'fruit-3', name: '🍊 Orange', class: '', accent: '#ff9f43', accent2: '#10ac84', bgFrom: '#2a1a0a', bgTo: '#3a2a1a' },
+      { id: 'fruit-4', name: '🍉 Watermelon', class: '', accent: '#ff6b81', accent2: '#7bed9f', bgFrom: '#2a0a1a', bgTo: '#3a1a2a' },
+      { id: 'fruit-5', name: '🍇 Grape', class: '', accent: '#8e44ad', accent2: '#f1c40f', bgFrom: '#1a0a2a', bgTo: '#2a1a3a' },
+      { id: 'fruit-6', name: '🥝 Kiwi', class: '', accent: '#6ab04c', accent2: '#f6e58d', bgFrom: '#0a2a0a', bgTo: '#1a3a1a' },
+      { id: 'fruit-7', name: '🍓 Strawberry', class: '', accent: '#ff4757', accent2: '#7bed9f', bgFrom: '#2a0a0f', bgTo: '#3a1a1f' },
+      { id: 'fruit-8', name: '🫐 Blueberry', class: '', accent: '#3498db', accent2: '#f1c40f', bgFrom: '#0a1a3a', bgTo: '#1a2a4a' },
+      { id: 'fruit-9', name: '🍍 Pineapple', class: '', accent: '#f6e58d', accent2: '#ff7979', bgFrom: '#2a2a0a', bgTo: '#3a3a1a' },
+      { id: 'fruit-10', name: '🥭 Mango', class: '', accent: '#f39c12', accent2: '#e67e22', bgFrom: '#2a1a0a', bgTo: '#3a2a1a' },
+
+      // ===== METALLIC/GEMS (10) =====
+      { id: 'metal-1', name: '🥇 Gold', class: '', accent: '#ffd700', accent2: '#daa520', bgFrom: '#2a1f0a', bgTo: '#3a2f1a' },
+      { id: 'metal-2', name: '🥈 Silver', class: '', accent: '#c0c0c0', accent2: '#a0a0a0', bgFrom: '#2a2a2a', bgTo: '#3a3a3a' },
+      { id: 'metal-3', name: '🥉 Bronze', class: '', accent: '#cd7f32', accent2: '#b87333', bgFrom: '#2a1a0f', bgTo: '#3a2a1f' },
+      { id: 'metal-4', name: '💎 Diamond', class: '', accent: '#b9f2ff', accent2: '#e0e0e0', bgFrom: '#1a2a3a', bgTo: '#2a3a4a' },
+      { id: 'metal-5', name: '🔴 Ruby', class: '', accent: '#e0115f', accent2: '#c0114f', bgFrom: '#2a0a14', bgTo: '#3a1a24' },
+      { id: 'metal-6', name: '💙 Sapphire', class: '', accent: '#0f52ba', accent2: '#002d62', bgFrom: '#0a1a3a', bgTo: '#1a2a4a' },
+      { id: 'metal-7', name: '💚 Emerald', class: '', accent: '#50c878', accent2: '#2e8b57', bgFrom: '#0a2a1a', bgTo: '#1a3a2a' },
+      { id: 'metal-8', name: '💜 Amethyst', class: '', accent: '#9966cc', accent2: '#7b42bc', bgFrom: '#1a0a2a', bgTo: '#2a1a3a' },
+      { id: 'metal-9', name: '⚓ Titanium', class: '', accent: '#878787', accent2: '#5a5a5a', bgFrom: '#2a2a2a', bgTo: '#3a3a3a' },
+      { id: 'metal-10', name: '🔮 Crystal', class: '', accent: '#7cb9e8', accent2: '#ffb3ba', bgFrom: '#1a2a3a', bgTo: '#2a3a4a' },
+
+      // ===== RETRO/VINTAGE (10) =====
+      { id: 'retro-1', name: '📻 Retro Radio', class: '', accent: '#ff6b4a', accent2: '#4a90e2', bgFrom: '#2a1a0f', bgTo: '#3a2a1f' },
+      { id: 'retro-2', name: '🎮 Game Boy', class: '', accent: '#306230', accent2: '#0f380f', bgFrom: '#1a2a1a', bgTo: '#2a3a2a' },
+      { id: 'retro-3', name: '📺 CRT', class: '', accent: '#8b4513', accent2: '#d2b48c', bgFrom: '#2a1a0a', bgTo: '#3a2a1a' },
+      { id: 'retro-4', name: '📼 VHS', class: '', accent: '#4834d4', accent2: '#f9ca24', bgFrom: '#1a1a2a', bgTo: '#2a2a3a' },
+      { id: 'retro-5', name: '🎸 Vinyl', class: '', accent: '#d4af37', accent2: '#800020', bgFrom: '#2a1a1a', bgTo: '#3a2a2a' },
+      { id: 'retro-6', name: '📸 Polaroid', class: '', accent: '#e6b800', accent2: '#4c4c4c', bgFrom: '#2a2a1a', bgTo: '#3a3a2a' },
+      { id: 'retro-7', name: '🎰 Casino', class: '', accent: '#ff4040', accent2: '#40ff40', bgFrom: '#1a0a0a', bgTo: '#2a1a1a' },
+      { id: 'retro-8', name: '🎪 Circus', class: '', accent: '#ff5252', accent2: '#ffd740', bgFrom: '#2a0f0f', bgTo: '#3a1f1f' },
+      { id: 'retro-9', name: '🎭 Masquerade', class: '', accent: '#ff4081', accent2: '#7c4dff', bgFrom: '#1a0f1a', bgTo: '#2a1f2a' },
+      { id: 'retro-10', name: '🎨 Pop Art', class: '', accent: '#ff6b9d', accent2: '#4aff6b', bgFrom: '#2a1a2a', bgTo: '#3a2a3a' },
+
+      // ===== HOLIDAY/SEASONAL (10) =====
+      { id: 'holiday-1', name: '🎄 Christmas', class: '', accent: '#ff4d4d', accent2: '#4dff4d', bgFrom: '#1a2a1a', bgTo: '#2a3a2a' },
+      { id: 'holiday-2', name: '🎃 Halloween', class: '', accent: '#ff7518', accent2: '#800080', bgFrom: '#2a1a0a', bgTo: '#3a2a1a' },
+      { id: 'holiday-3', name: '💕 Valentine', class: '', accent: '#ff99cc', accent2: '#ff1a75', bgFrom: '#2a1a2a', bgTo: '#3a2a3a' },
+      { id: 'holiday-4', name: '🐣 Easter', class: '', accent: '#ffb7c5', accent2: '#b0e57c', bgFrom: '#2a1a2a', bgTo: '#3a2a3a' },
+      { id: 'holiday-5', name: '🎆 New Year', class: '', accent: '#ffd700', accent2: '#00ffff', bgFrom: '#1a1a3a', bgTo: '#2a2a4a' },
+      { id: 'holiday-6', name: '🍀 St. Patrick', class: '', accent: '#00ff00', accent2: '#ffaa00', bgFrom: '#0a2a0a', bgTo: '#1a3a1a' },
+      { id: 'holiday-7', name: '🎂 Birthday', class: '', accent: '#ff69b4', accent2: '#ffff00', bgFrom: '#2a0a2a', bgTo: '#3a1a3a' },
+      { id: 'holiday-8', name: '🏮 Lunar New Year', class: '', accent: '#ff3333', accent2: '#ffd700', bgFrom: '#2a0a0a', bgTo: '#3a1a1a' },
+      { id: 'holiday-9', name: '🕎 Hanukkah', class: '', accent: '#0039a6', accent2: '#ffffff', bgFrom: '#0a1a3a', bgTo: '#1a2a4a' },
+      { id: 'holiday-10', name: '☀️ Summer', class: '', accent: '#ff9933', accent2: '#ffff99', bgFrom: '#2a2a0a', bgTo: '#3a3a1a' },
+
+      // ===== EXTRA BONUS (10) =====
+      { id: 'extra-1', name: '🎌 Japan', class: '', accent: '#bc002d', accent2: '#000000', bgFrom: '#2a1a1a', bgTo: '#3a2a2a' },
+      { id: 'extra-2', name: '🏯 China', class: '', accent: '#ffde00', accent2: '#de2910', bgFrom: '#2a1a0a', bgTo: '#3a2a1a' },
+      { id: 'extra-3', name: '🎭 Kabuki', class: '', accent: '#ff0000', accent2: '#000000', bgFrom: '#1a0a0a', bgTo: '#2a1a1a' },
+      { id: 'extra-4', name: '🌸 Sakura', class: '', accent: '#ffb7c5', accent2: '#b45f7a', bgFrom: '#2a1a2a', bgTo: '#3a2a3a' },
+      { id: 'extra-5', name: '⚡ Shogun', class: '', accent: '#c0a050', accent2: '#402020', bgFrom: '#2a1a0f', bgTo: '#3a2a1f' },
+      { id: 'extra-6', name: '🏮 Geisha', class: '', accent: '#ff99aa', accent2: '#990000', bgFrom: '#2a1a1a', bgTo: '#3a2a2a' },
+      { id: 'extra-7', name: '⛩️ Temple', class: '', accent: '#8b4513', accent2: '#cd853f', bgFrom: '#1a1a1a', bgTo: '#2a2a2a' },
+      { id: 'extra-8', name: '🎋 Tanabata', class: '', accent: '#9370db', accent2: '#ffb6c1', bgFrom: '#1a1a3a', bgTo: '#2a2a4a' },
+      { id: 'extra-9', name: '🎑 Tsukimi', class: '', accent: '#fffacd', accent2: '#b8860b', bgFrom: '#1a1a2a', bgTo: '#2a2a3a' },
+      { id: 'extra-10', name: '🎐 Koinobori', class: '', accent: '#4169e1', accent2: '#ff4500', bgFrom: '#0a1a2a', bgTo: '#1a2a3a' },
+
+      { id: 'pastel-baby-1', name: '👶 Baby Pink', class: '', accent: '#ffb6c1', accent2: '#ff9eb5', bgFrom: '#fff0f3', bgTo: '#ffe4e9' },
+      { id: 'pastel-baby-2', name: '👼 Baby Blue', class: '', accent: '#a8e6cf', accent2: '#8ed9cc', bgFrom: '#e6f3ff', bgTo: '#d4eaff' },
+      { id: 'pastel-baby-3', name: '🍼 Mint Cream', class: '', accent: '#c1f0d6', accent2: '#a8e6cf', bgFrom: '#f0fff4', bgTo: '#e0f7e8' },
+      { id: 'pastel-baby-4', name: '🎀 Blush', class: '', accent: '#ffd1dc', accent2: '#ffb6c1', bgFrom: '#fff5f7', bgTo: '#ffe9ed' },
+      { id: 'pastel-baby-5', name: '🦋 Lavender Blush', class: '', accent: '#e6d7ff', accent2: '#d6b5ff', bgFrom: '#f9f0ff', bgTo: '#f0e0ff' },
+      { id: 'pastel-baby-6', name: '🍦 Vanilla', class: '', accent: '#fff2cc', accent2: '#ffe4b5', bgFrom: '#fff9e6', bgTo: '#fff2d9' },
+      { id: 'pastel-baby-7', name: '🐣 Chick Yellow', class: '', accent: '#fff5ba', accent2: '#ffee99', bgFrom: '#ffffe0', bgTo: '#ffffcc' },
+      { id: 'pastel-baby-8', name: '🪻 Lilac', class: '', accent: '#e0d7ff', accent2: '#d0c0ff', bgFrom: '#f5f0ff', bgTo: '#eae0ff' },
+      { id: 'pastel-baby-9', name: '🩵 Sky Blue', class: '', accent: '#b5e6ff', accent2: '#9ad9ff', bgFrom: '#e6f7ff', bgTo: '#d6f0ff' },
+      { id: 'pastel-baby-10', name: '🤍 Pearl White', class: '', accent: '#fff0f0', accent2: '#ffe0e0', bgFrom: '#ffffff', bgTo: '#fafafa' },
+
+      // ===== DESSERT PASTELS (10) =====
+      { id: 'pastel-dessert-1', name: '🍰 Strawberry Cake', class: '', accent: '#ffb3ba', accent2: '#ff9aa2', bgFrom: '#fff0f2', bgTo: '#ffe5e8' },
+      { id: 'pastel-dessert-2', name: '🍦 Ice Cream', class: '', accent: '#ffd5b5', accent2: '#ffc3a0', bgFrom: '#fff2e6', bgTo: '#ffe8d9' },
+      { id: 'pastel-dessert-3', name: '🍩 Donut Glaze', class: '', accent: '#ffe0b5', accent2: '#ffd2a0', bgFrom: '#fff7e6', bgTo: '#fff0d9' },
+      { id: 'pastel-dessert-4', name: '🍮 Pudding', class: '', accent: '#ffe0a3', accent2: '#ffd28c', bgFrom: '#fff9e6', bgTo: '#fff2d9' },
+      { id: 'pastel-dessert-5', name: '🍭 Cotton Candy', class: '', accent: '#ffc0cb', accent2: '#ffb3c6', bgFrom: '#fff0f5', bgTo: '#ffe5f0' },
+      { id: 'pastel-dessert-6', name: '🍬 Marshmallow', class: '', accent: '#fff0f5', accent2: '#ffe4f0', bgFrom: '#ffffff', bgTo: '#fff5fa' },
+      { id: 'pastel-dessert-7', name: '🍫 Chocolate Mousse', class: '', accent: '#e0c9b5', accent2: '#d4b8a0', bgFrom: '#f5e6d9', bgTo: '#ecd9c9' },
+      { id: 'pastel-dessert-8', name: '🍯 Honey', class: '', accent: '#ffe5b4', accent2: '#ffd9a0', bgFrom: '#fff9e6', bgTo: '#fff2d9' },
+      { id: 'pastel-dessert-9', name: '🍪 Cookie Dough', class: '', accent: '#e0d0b5', accent2: '#d4c0a0', bgFrom: '#f5ecd9', bgTo: '#ecdfcc' },
+      { id: 'pastel-dessert-10', name: '🎂 Birthday Cake', class: '', accent: '#ffc0cb', accent2: '#b5e6ff', bgFrom: '#fff5f7', bgTo: '#ffecf0' },
+
+      // ===== FLORAL PASTELS (10) =====
+      { id: 'pastel-floral-1', name: '🌹 Rose', class: '', accent: '#ffb6c1', accent2: '#ff9eb5', bgFrom: '#fff0f3', bgTo: '#ffe6ec' },
+      { id: 'pastel-floral-2', name: '🌻 Sunflower', class: '', accent: '#fff0b5', accent2: '#ffe68c', bgFrom: '#ffffe6', bgTo: '#fff9d9' },
+      { id: 'pastel-floral-3', name: '🌷 Tulip', class: '', accent: '#ffb3b3', accent2: '#ff9999', bgFrom: '#fff0f0', bgTo: '#ffe6e6' },
+      { id: 'pastel-floral-4', name: '🌸 Cherry Blossom', class: '', accent: '#ffd1dc', accent2: '#ffb6c1', bgFrom: '#fff5f9', bgTo: '#ffecf2' },
+      { id: 'pastel-floral-5', name: '🌼 Daisy', class: '', accent: '#fff5ba', accent2: '#ffee99', bgFrom: '#ffffe6', bgTo: '#ffffcc' },
+      { id: 'pastel-floral-6', name: '💐 Lavender', class: '', accent: '#e6d7ff', accent2: '#d6b5ff', bgFrom: '#f5f0ff', bgTo: '#ece0ff' },
+      { id: 'pastel-floral-7', name: '🌺 Hibiscus', class: '', accent: '#ffb3ba', accent2: '#ff99a5', bgFrom: '#fff0f2', bgTo: '#ffe6ea' },
+      { id: 'pastel-floral-8', name: '🌿 Mint Leaf', class: '', accent: '#c1f0d6', accent2: '#a8e6cf', bgFrom: '#e6fff0', bgTo: '#d9f7e8' },
+      { id: 'pastel-floral-9', name: '🌱 Sage', class: '', accent: '#d0f0c0', accent2: '#b8e0a8', bgFrom: '#e6ffe6', bgTo: '#d9f7d9' },
+      { id: 'pastel-floral-10', name: '🍁 Autumn Leaf', class: '', accent: '#ffd9b3', accent2: '#ffc999', bgFrom: '#fff2e6', bgTo: '#ffe9d9' },
+
+      // ===== CANDY PASTELS (10) =====
+      { id: 'pastel-candy-1', name: '🍬 Mint Candy', class: '', accent: '#b5e6d6', accent2: '#9ad9cc', bgFrom: '#e6fff5', bgTo: '#d9ffec' },
+      { id: 'pastel-candy-2', name: '🍭 Lollipop', class: '', accent: '#ffb5e6', accent2: '#ff99d9', bgFrom: '#ffe6f5', bgTo: '#ffd9ec' },
+      { id: 'pastel-candy-3', name: '🍫 Fudge', class: '', accent: '#e0b5b5', accent2: '#d49c9c', bgFrom: '#f5e6e6', bgTo: '#ecd9d9' },
+      { id: 'pastel-candy-4', name: '🍇 Grape Candy', class: '', accent: '#e0b5ff', accent2: '#d49cff', bgFrom: '#f5e6ff', bgTo: '#ecd9ff' },
+      { id: 'pastel-candy-5', name: '🍊 Orange Candy', class: '', accent: '#ffd9b5', accent2: '#ffcc99', bgFrom: '#fff2e6', bgTo: '#ffe9d9' },
+      { id: 'pastel-candy-6', name: '🍎 Apple Candy', class: '', accent: '#ffb5b5', accent2: '#ff9999', bgFrom: '#ffe6e6', bgTo: '#ffd9d9' },
+      { id: 'pastel-candy-7', name: '🍋 Lemon Candy', class: '', accent: '#fff0b5', accent2: '#ffe699', bgFrom: '#ffffe6', bgTo: '#fff9d9' },
+      { id: 'pastel-candy-8', name: '🫐 Blueberry Candy', class: '', accent: '#b5b5ff', accent2: '#9999ff', bgFrom: '#e6e6ff', bgTo: '#d9d9ff' },
+      { id: 'pastel-candy-9', name: '🍓 Strawberry Candy', class: '', accent: '#ffb5c1', accent2: '#ff99b5', bgFrom: '#ffe6f0', bgTo: '#ffd9e6' },
+      { id: 'pastel-candy-10', name: '🍒 Cherry Candy', class: '', accent: '#ffb3ba', accent2: '#ff99a5', bgFrom: '#ffe6e8', bgTo: '#ffd9dd' },
+
+      // ===== RAINBOW PASTELS (10) =====
+      { id: 'pastel-rainbow-1', name: '🌈 Pink Dream', class: '', accent: '#ffc0cb', accent2: '#ffb3c6', bgFrom: '#fff0f5', bgTo: '#ffe6f0' },
+      { id: 'pastel-rainbow-2', name: '🌈 Peach Fuzz', class: '', accent: '#ffd9b5', accent2: '#ffcc99', bgFrom: '#fff2e6', bgTo: '#ffe9d9' },
+      { id: 'pastel-rainbow-3', name: '🌈 Coral Reef', class: '', accent: '#ffb5b5', accent2: '#ff9999', bgFrom: '#ffe6e6', bgTo: '#ffd9d9' },
+      { id: 'pastel-rainbow-4', name: '🌈 Lemon Sorbet', class: '', accent: '#fff0b5', accent2: '#ffe699', bgFrom: '#ffffe6', bgTo: '#fff9d9' },
+      { id: 'pastel-rainbow-5', name: '🌈 Lime Fizz', class: '', accent: '#e0f0b5', accent2: '#cce699', bgFrom: '#f5ffe6', bgTo: '#ecffd9' },
+      { id: 'pastel-rainbow-6', name: '🌈 Mint Julep', class: '', accent: '#b5f0d6', accent2: '#99e6cc', bgFrom: '#e6fff5', bgTo: '#d9ffec' },
+      { id: 'pastel-rainbow-7', name: '🌈 Aqua Fresh', class: '', accent: '#b5e6f0', accent2: '#99d9e6', bgFrom: '#e6f9ff', bgTo: '#d9f0ff' },
+      { id: 'pastel-rainbow-8', name: '🌈 Sky Blue', class: '', accent: '#b5c8ff', accent2: '#99b5ff', bgFrom: '#e6ecff', bgTo: '#d9e0ff' },
+      { id: 'pastel-rainbow-9', name: '🌈 Lavender Mist', class: '', accent: '#e0b5ff', accent2: '#d49cff', bgFrom: '#f5e6ff', bgTo: '#ecd9ff' },
+      { id: 'pastel-rainbow-10', name: '🌈 Orchid', class: '', accent: '#ffb5f0', accent2: '#ff99e6', bgFrom: '#ffe6fa', bgTo: '#ffd9f5' },
+
+      // ===== MOOD PASTELS (10) =====
+      { id: 'pastel-mood-1', name: '😊 Happy', class: '', accent: '#ffffb5', accent2: '#ffff99', bgFrom: '#ffffe6', bgTo: '#ffffd9' },
+      { id: 'pastel-mood-2', name: '🥰 Love', class: '', accent: '#ffb5b5', accent2: '#ff9999', bgFrom: '#ffe6e6', bgTo: '#ffd9d9' },
+      { id: 'pastel-mood-3', name: '😌 Calm', class: '', accent: '#b5e6e6', accent2: '#99d9d9', bgFrom: '#e6ffff', bgTo: '#d9fafa' },
+      { id: 'pastel-mood-4', name: '😴 Sleepy', class: '', accent: '#e0d0ff', accent2: '#d4bfff', bgFrom: '#f5f0ff', bgTo: '#ece5ff' },
+      { id: 'pastel-mood-5', name: '🤗 Cozy', class: '', accent: '#ffd9b5', accent2: '#ffcc99', bgFrom: '#fff2e6', bgTo: '#ffe9d9' },
+      { id: 'pastel-mood-6', name: '🥺 Gentle', class: '', accent: '#ffd1dc', accent2: '#ffb6c1', bgFrom: '#fff5f9', bgTo: '#ffecf2' },
+      { id: 'pastel-mood-7', name: '🤍 Peace', class: '', accent: '#f0f0f0', accent2: '#e0e0e0', bgFrom: '#ffffff', bgTo: '#fafafa' },
+      { id: 'pastel-mood-8', name: '💭 Dreamy', class: '', accent: '#e6d7ff', accent2: '#d6b5ff', bgFrom: '#f5f0ff', bgTo: '#f0e5ff' },
+      { id: 'pastel-mood-9', name: '🌅 Warm', class: '', accent: '#ffd5b5', accent2: '#ffc3a0', bgFrom: '#fff2e6', bgTo: '#ffe9d9' },
+      { id: 'pastel-mood-10', name: '🌿 Fresh', class: '', accent: '#d0f0c0', accent2: '#b8e0a8', bgFrom: '#f0ffe6', bgTo: '#e6f7d9' },
+
+      // ===== DRINK PASTELS (10) =====
+      { id: 'pastel-drink-1', name: '🥛 Milk Tea', class: '', accent: '#e0c9b5', accent2: '#d4b8a0', bgFrom: '#f5e6d9', bgTo: '#ecd9cc' },
+      { id: 'pastel-drink-2', name: '🍵 Matcha', class: '', accent: '#d0f0c0', accent2: '#b8e0a8', bgFrom: '#e6ffe6', bgTo: '#d9f7d9' },
+      { id: 'pastel-drink-3', name: '🧋 Bubble Tea', class: '', accent: '#ffd9b5', accent2: '#ffcc99', bgFrom: '#fff2e6', bgTo: '#ffe9d9' },
+      { id: 'pastel-drink-4', name: '🍓 Strawberry Milk', class: '', accent: '#ffb5c1', accent2: '#ff99b5', bgFrom: '#ffe6f0', bgTo: '#ffd9e6' },
+      { id: 'pastel-drink-5', name: '🍫 Hot Chocolate', class: '', accent: '#e0b5a3', accent2: '#d49c8c', bgFrom: '#f5e6e0', bgTo: '#ecd9d2' },
+      { id: 'pastel-drink-6', name: '🍋 Lemonade', class: '', accent: '#fff0b5', accent2: '#ffe699', bgFrom: '#ffffe6', bgTo: '#fff9d9' },
+      { id: 'pastel-drink-7', name: '🍉 Watermelon Slush', class: '', accent: '#ffb3ba', accent2: '#ff99a5', bgFrom: '#ffe6e8', bgTo: '#ffd9dd' },
+      { id: 'pastel-drink-8', name: '🫐 Blueberry Smoothie', class: '', accent: '#b5b5ff', accent2: '#9999ff', bgFrom: '#e6e6ff', bgTo: '#d9d9ff' },
+      { id: 'pastel-drink-9', name: '🥝 Kiwi Smoothie', class: '', accent: '#d0f0b5', accent2: '#b8e099', bgFrom: '#e6ffe6', bgTo: '#d9f7d9' },
+      { id: 'pastel-drink-10', name: '🍑 Peach Tea', class: '', accent: '#ffd9b5', accent2: '#ffcc99', bgFrom: '#fff2e6', bgTo: '#ffe9d9' },
+
+      // ===== NATURE PASTELS (10) =====
+      { id: 'pastel-nature-1', name: '🌄 Sunrise', class: '', accent: '#ffd5b5', accent2: '#ffc3a0', bgFrom: '#fff2e6', bgTo: '#ffe9d9' },
+      { id: 'pastel-nature-2', name: '🌅 Sunset', class: '', accent: '#ffb5c1', accent2: '#ff99b5', bgFrom: '#ffe6f0', bgTo: '#ffd9e6' },
+      { id: 'pastel-nature-3', name: '🌊 Ocean Wave', class: '', accent: '#b5e6f0', accent2: '#99d9e6', bgFrom: '#e6f9ff', bgTo: '#d9f0ff' },
+      { id: 'pastel-nature-4', name: '🏔️ Mountain', class: '', accent: '#d0d0f0', accent2: '#c0c0e0', bgFrom: '#f0f0ff', bgTo: '#e6e6fa' },
+      { id: 'pastel-nature-5', name: '🌲 Forest', class: '', accent: '#d0f0d0', accent2: '#b8e0b8', bgFrom: '#e6ffe6', bgTo: '#d9f7d9' },
+      { id: 'pastel-nature-6', name: '🏖️ Beach', class: '', accent: '#fff0b5', accent2: '#ffe699', bgFrom: '#ffffe6', bgTo: '#fff9d9' },
+      { id: 'pastel-nature-7', name: '🌾 Field', class: '', accent: '#fff0d0', accent2: '#ffe6b8', bgFrom: '#ffffe6', bgTo: '#fff9e6' },
+      { id: 'pastel-nature-8', name: '🍂 Autumn', class: '', accent: '#ffd9b5', accent2: '#ffcc99', bgFrom: '#fff2e6', bgTo: '#ffe9d9' },
+      { id: 'pastel-nature-9', name: '❄️ Winter', class: '', accent: '#e0f0ff', accent2: '#c0e0ff', bgFrom: '#f0faff', bgTo: '#e6f2ff' },
+      { id: 'pastel-nature-10', name: '🌸 Spring', class: '', accent: '#ffd1dc', accent2: '#ffb6c1', bgFrom: '#fff5f9', bgTo: '#ffecf2' },
+
+      // ===== GIRLY PASTELS (10) =====
+      { id: 'pastel-girly-1', name: '👛 Purse Pink', class: '', accent: '#ffb5d6', accent2: '#ff99c6', bgFrom: '#ffe6f2', bgTo: '#ffd9ec' },
+      { id: 'pastel-girly-2', name: '💄 Lipstick', class: '', accent: '#ffb3ba', accent2: '#ff99a5', bgFrom: '#ffe6e8', bgTo: '#ffd9dd' },
+      { id: 'pastel-girly-3', name: '👗 Dress', class: '', accent: '#ffb5f0', accent2: '#ff99e6', bgFrom: '#ffe6fa', bgTo: '#ffd9f5' },
+      { id: 'pastel-girly-4', name: '👠 Heels', class: '', accent: '#ffb5b5', accent2: '#ff9999', bgFrom: '#ffe6e6', bgTo: '#ffd9d9' },
+      { id: 'pastel-girly-5', name: '💍 Ring', class: '', accent: '#e0d0ff', accent2: '#d4bfff', bgFrom: '#f5f0ff', bgTo: '#ece5ff' },
+      { id: 'pastel-girly-6', name: '👒 Hat', class: '', accent: '#ffd9b5', accent2: '#ffcc99', bgFrom: '#fff2e6', bgTo: '#ffe9d9' },
+      { id: 'pastel-girly-7', name: '👜 Bag', class: '', accent: '#d0b5ff', accent2: '#b89cff', bgFrom: '#f0e6ff', bgTo: '#e6d9ff' },
+      { id: 'pastel-girly-8', name: '👓 Glasses', class: '', accent: '#f0f0f0', accent2: '#e0e0e0', bgFrom: '#ffffff', bgTo: '#fafafa' },
+      { id: 'pastel-girly-9', name: '🧣 Scarf', class: '', accent: '#ffd1dc', accent2: '#ffb6c1', bgFrom: '#fff5f9', bgTo: '#ffecf2' },
+      { id: 'pastel-girly-10', name: '🧤 Gloves', class: '', accent: '#ffe0b5', accent2: '#ffd2a0', bgFrom: '#fff7e6', bgTo: '#fff0d9' },
+
+      // ===== ANIMAL PASTELS (10) =====
+      { id: 'pastel-animal-1', name: '🐰 Bunny', class: '', accent: '#ffd1dc', accent2: '#ffb6c1', bgFrom: '#fff5f9', bgTo: '#ffecf2' },
+      { id: 'pastel-animal-2', name: '🐻 Bear', class: '', accent: '#e0c9b5', accent2: '#d4b8a0', bgFrom: '#f5e6d9', bgTo: '#ecd9cc' },
+      { id: 'pastel-animal-3', name: '🐱 Kitty', class: '', accent: '#ffd9b5', accent2: '#ffcc99', bgFrom: '#fff2e6', bgTo: '#ffe9d9' },
+      { id: 'pastel-animal-4', name: '🐶 Puppy', class: '', accent: '#e0b5a3', accent2: '#d49c8c', bgFrom: '#f5e6e0', bgTo: '#ecd9d2' },
+      { id: 'pastel-animal-5', name: '🐼 Panda', class: '', accent: '#f0f0f0', accent2: '#d0d0d0', bgFrom: '#ffffff', bgTo: '#f5f5f5' },
+      { id: 'pastel-animal-6', name: '🦊 Fox', class: '', accent: '#ffd0b5', accent2: '#ffb899', bgFrom: '#fff0e6', bgTo: '#ffe6d9' },
+      { id: 'pastel-animal-7', name: '🐨 Koala', class: '', accent: '#d0d0d0', accent2: '#c0c0c0', bgFrom: '#f5f5f5', bgTo: '#eaeaea' },
+      { id: 'pastel-animal-8', name: '🐸 Frog', class: '', accent: '#d0f0c0', accent2: '#b8e0a8', bgFrom: '#e6ffe6', bgTo: '#d9f7d9' },
+      { id: 'pastel-animal-9', name: '🐧 Penguin', class: '', accent: '#d0e0f0', accent2: '#b8c8e0', bgFrom: '#f0f5ff', bgTo: '#e6ecff' },
+      { id: 'pastel-animal-10', name: '🦄 Unicorn', class: '', accent: '#ffd1f0', accent2: '#ffb5e6', bgFrom: '#fff5fa', bgTo: '#ffeaf5' }
+    ];
+
+    /* ============================================ */
+    /* I18N TRANSLATIONS                             */
+    /* ============================================ */
+    /* 
+      TRANSLATIONS: รองรับ 3 ภาษา (ไทย, อังกฤษ, ญี่ปุ่น)
+      - th: ภาษาไทย
+      - en: ภาษาอังกฤษ
+      - ja: ภาษาญี่ปุ่น
+    */
+    const TRANSLATIONS = {
+      th: {
+        langName: 'ไทย', langFlag: '🇹🇭',
+        nexoAdmin: 'แอดมิน', nexoUser: 'ผู้ใช้งาน',
+        loading: 'กำลังโหลด',
+        login: 'เข้าสู่ระบบ', logout: 'ออกจากระบบ',
+        tickerItems: ['ตรวจสอบคิว', 'จัดการงาน', 'ระบบ NEXO CHECK Q', 'กำลังดำเนินการ'],
+        todayQueue: "คิววันนี้",
+        noTasksToday: 'ไม่มีงานวันนี้',
+        today: 'วันนี้', tasks: 'งาน', nextSlot: 'คิวถัดไป', pending: 'รอดำเนินการ', auto: 'อัตโนมัติ',
+        statusWip: 'กำลังทำ', statusDone: 'เสร็จแล้ว', statusWait: 'รอคิว',
+        filterAll: 'ทั้งหมด', filterPending: 'ยังไม่เสร็จ', filterDone: 'เสร็จแล้ว', filterMonth: 'เดือนนี้', filterCal: 'ปฏิทิน',
+        searchPlaceholder: 'ค้นหา...', results: 'รายการ', noRecords: 'ไม่พบข้อมูล',
+        newTask: 'เพิ่มคิวใหม่', editTask: 'แก้ไขคิว', taskId: 'รหัสงาน',
+        copy: 'คัดลอก', copied: 'คัดลอกแล้ว', urgent: 'งานด่วน',
+        clientPlaceholder: 'ชื่อลูกค้า', typePlaceholder: 'ประเภทงาน', channelPlaceholder: 'ช่องทาง', detailsPlaceholder: 'รายละเอียดเพิ่มเติม...',
+        deadline: 'วันกำหนดส่ง', saving: 'กำลังบันทึก...', create: 'สร้างงาน →', update: 'อัปเดต →',
+        confirmDelete: 'ยืนยันการลบ?', cancel: 'ยกเลิก', delete: 'ลบ',
+        adminAccess: 'เข้าสู่ระบบแอดมิน', authenticate: 'ยืนยันตัวตน', accessDenied: 'รหัสผ่านไม่ถูกต้อง', verifying: 'กำลังตรวจสอบ', loginBtn: 'เข้าสู่ระบบ →',
+        settingsTitle: 'ตั้งค่าเว็บไซต์', siteTitle: 'ชื่อเว็บไซต์', faviconUrl: 'URL ไอคอน', save: 'บันทึก', saved: 'บันทึกแล้ว ✓',
+        themeTitle: 'ธีม', colorScheme: 'สีธีม', uiSkin: 'ธีม UI', fontFamily: 'รูปแบบตัวอักษร',
+        addBanner: '+ เพิ่มแบนเนอร์', showBanner: 'แสดงแบนเนอร์', updateProfile: 'เปลี่ยนรูปโปรไฟล์', updateBanner: 'เปลี่ยนแบนเนอร์', uploadBtn: 'อัปโหลด →',
+        language: 'ภาษา',
+        toastCreated: 'เพิ่มงานแล้ว ✓', toastUpdated: 'อัปเดตแล้ว ✓', toastDeleted: 'ลบแล้ว ✗', toastSaved: 'บันทึกแล้ว ✓',
+      },
+      en: {
+        langName: 'English', langFlag: '🇬🇧',
+        nexoAdmin: 'ADMIN', nexoUser: 'USER',
+        loading: 'LOADING', login: 'LOGIN', logout: 'LOGOUT',
+        tickerItems: ['CHECK QUEUE', 'TASK MANAGER', 'NEXO SYSTEM', 'WORK IN PROGRESS'],
+        todayQueue: "TODAY'S QUEUE", noTasksToday: 'NO TASKS TODAY',
+        today: 'TODAY', tasks: 'TASKS', nextSlot: 'NEXT SLOT', pending: 'PENDING', auto: 'AUTO',
+        statusWip: 'WIP', statusDone: 'DONE', statusWait: 'WAIT',
+        filterAll: 'ALL', filterPending: 'PENDING', filterDone: 'DONE', filterMonth: 'THIS MTH', filterCal: 'CAL',
+        searchPlaceholder: 'SEARCH...', results: 'RESULT', noRecords: 'NO RECORDS FOUND',
+        newTask: '// NEW TASK', editTask: '// EDIT TASK', taskId: 'TASK ID',
+        copy: 'COPY', copied: 'COPIED', urgent: 'URGENT WORK',
+        clientPlaceholder: 'Client name', typePlaceholder: 'Task type', channelPlaceholder: 'Channel', detailsPlaceholder: 'Additional details...',
+        deadline: 'DEADLINE', saving: 'SAVING...', create: 'CREATE →', update: 'UPDATE →',
+        confirmDelete: 'CONFIRM DELETE?', cancel: 'CANCEL', delete: 'DELETE',
+        adminAccess: '// ADMIN ACCESS', authenticate: 'AUTHENTICATE', accessDenied: 'ACCESS DENIED', verifying: 'VERIFYING', loginBtn: 'LOGIN →',
+        settingsTitle: '// SETTINGS', siteTitle: 'SITE TITLE', faviconUrl: 'FAVICON URL', save: 'SAVE', saved: 'Saved ✓',
+        themeTitle: '// THEME', colorScheme: 'COLOR SCHEME', uiSkin: 'UI SKIN', fontFamily: 'FONT FAMILY',
+        addBanner: '+ ADD BANNER', showBanner: 'SHOW BANNER', updateProfile: 'UPDATE PROFILE', updateBanner: 'UPDATE BANNER', uploadBtn: 'UPLOAD →',
+        language: 'LANGUAGE',
+        toastCreated: 'Task created ✓', toastUpdated: 'Updated ✓', toastDeleted: 'Deleted ✗', toastSaved: 'Saved ✓',
+      },
+      ja: {
+        langName: '日本語', langFlag: '🇯🇵',
+        nexoAdmin: '管理者', nexoUser: 'ユーザー',
+        loading: '読み込み中', login: 'ログイン', logout: 'ログアウト',
+        tickerItems: ['キュー確認', 'タスク管理', 'NEXOシステム', '作業中'],
+        todayQueue: '本日のキュー', noTasksToday: '本日のタスクなし',
+        today: '本日', tasks: 'タスク', nextSlot: '次のスロット', pending: '保留中', auto: '自動',
+        statusWip: '作業中', statusDone: '完了', statusWait: '待機',
+        filterAll: '全て', filterPending: '未完了', filterDone: '完了', filterMonth: '今月', filterCal: 'カレンダー',
+        searchPlaceholder: '検索...', results: '件', noRecords: 'データなし',
+        newTask: '新規タスク', editTask: 'タスク編集', taskId: 'タスクID',
+        copy: 'コピー', copied: 'コピー済', urgent: '急ぎの仕事',
+        clientPlaceholder: 'クライアント名', typePlaceholder: '作業タイプ', channelPlaceholder: 'チャンネル', detailsPlaceholder: '詳細（任意）...',
+        deadline: '締め切り', saving: '保存中...', create: '作成 →', update: '更新 →',
+        confirmDelete: '削除しますか？', cancel: 'キャンセル', delete: '削除',
+        adminAccess: '管理者アクセス', authenticate: '認証', accessDenied: 'アクセス拒否', verifying: '確認中', loginBtn: 'ログイン →',
+        settingsTitle: '設定', siteTitle: 'サイト名', faviconUrl: 'ファビコンURL', save: '保存', saved: '保存しました ✓',
+        themeTitle: 'テーマ', colorScheme: 'カラー', uiSkin: 'UIスキン', fontFamily: 'フォント',
+        addBanner: '+ バナー追加', showBanner: 'バナー表示', updateProfile: 'プロフィール画像更新', updateBanner: 'バナー更新', uploadBtn: 'アップロード →',
+        language: '言語',
+        toastCreated: '作成しました ✓', toastUpdated: '更新しました ✓', toastDeleted: '削除しました ✗', toastSaved: '保存しました ✓',
+      },
+    };
+
+    /* ============================================ */
+    /* LANGUAGE CONTEXT                              */
+    /* ============================================ */
+    const LangContext = React.createContext({ lang: 'th', t: TRANSLATIONS.th, setLang: () => { } });
+    const useLang = () => React.useContext(LangContext);
+
+    /* ============================================ */
+    /* HELPER: setActiveFont                         */
+    /* ============================================ */
+    /* ฟังก์ชันสำหรับเปลี่ยนฟอนต์:
+       - ปิดการใช้งานฟอนต์ทั้งหมดก่อน
+       - เปิดใช้งานฟอนต์ที่เลือก
+       - เพิ่ม class ที่ body
+    */
+    const setActiveFont = (fontId) => {
+      const fontIds = ['default', 'playpen', 'kanit', 'kanit-prompt', 'noto', 'itim', 'complete', 'anuphan', 'baijamjuree', 'chakrapetch', 'charm', 'charmonman', 'ibmplex', 'k2d', 'mali', 'mitr', 'niramit', 'prompt', 'sarabun', 'sriracha', 'taviraj', 'trirong'];
+      fontIds.forEach(id => { const el = document.getElementById(`font-${id}`); if (el) el.setAttribute('disabled', 'disabled'); });
+      fontIds.forEach(id => { if (id !== 'default') document.body.classList.remove(`font-${id}`); });
+      if (fontId !== 'default') {
+        const el = document.getElementById(`font-${fontId}`);
+        if (el) el.removeAttribute('disabled');
+        document.body.classList.add(`font-${fontId}`);
+      } else {
+        const el = document.getElementById('font-default');
+        if (el) el.removeAttribute('disabled');
+      }
+    };
+
+    /* ============================================ */
+    /* ✨ NEW: TOAST COMPONENT                        */
+    /* ============================================ */
+    /* 
+      Toast: แสดงการแจ้งเตือนชั่วคราว
+      Props:
+        - toasts: array ของ toast objects { id, msg, type, accent }
+    */
+    const Toast = ({ toasts }) => (
+      <div style={{ position: 'fixed', top: '16px', right: '16px', zIndex: 9999, display: 'flex', flexDirection: 'column', gap: '8px', pointerEvents: 'none' }}>
+        {toasts.map(toast => (
+          <div key={toast.id}
+            className="toast-enter"
+            style={{
+              display: 'flex', alignItems: 'center', gap: '10px',
+              padding: '12px 18px', borderRadius: '10px',
+              background: toast.type === 'error' ? 'rgba(255,71,87,0.15)' : 'rgba(0,0,0,0.85)',
+              border: `1px solid ${toast.type === 'error' ? '#ff4757' : toast.accent || '#e8ff47'}`,
+              color: toast.type === 'error' ? '#ff4757' : toast.accent || '#e8ff47',
+              fontFamily: 'var(--mono)', fontSize: '11px', letterSpacing: '0.1em',
+              backdropFilter: 'blur(12px)',
+              boxShadow: `0 8px 32px rgba(0,0,0,0.4), 0 0 20px ${toast.type === 'error' ? '#ff475722' : (toast.accent || '#e8ff47') + '22'}`,
+              whiteSpace: 'nowrap',
+            }}>
+            <span style={{ fontSize: '14px' }}>{toast.type === 'error' ? '✕' : '✓'}</span>
+            {toast.msg}
+          </div>
+        ))}
+      </div>
+    );
+
+    /* ============================================ */
+    /* ✨ NEW: PARTICLE CANVAS COMPONENT              */
+    /* ============================================ */
+    /* 
+      ParticleCanvas: สร้างเอฟเฟกต์อนุภาคเคลื่อนไหว
+      Props:
+        - accent: สีหลักสำหรับอนุภาคและเส้นเชื่อม
+    */
+    const ParticleCanvas = ({ accent }) => {
+      const canvasRef = useRef(null);
+      useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
+        resize();
+        window.addEventListener('resize', resize);
+
+        // สร้างอนุภาค 150 จุดแบบสุ่ม
+        const dots = Array.from({ length: 150 }, () => ({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.25,
+          vy: (Math.random() - 0.5) * 0.25,
+          r: Math.random() * 2.5 + 1.5,
+          opacity: Math.random() * 0.3 + 0.7,
+        }));
+
+        let raf;
+        const draw = () => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          dots.forEach(d => {
+            d.x += d.vx; d.y += d.vy;
+            if (d.x < 0 || d.x > canvas.width) d.vx *= -1;
+            if (d.y < 0 || d.y > canvas.height) d.vy *= -1;
+            ctx.beginPath();
+            ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+            ctx.fillStyle = accent + Math.floor(d.opacity * 255).toString(16).padStart(2, '0');
+            ctx.fill();
+          });
+
+          // วาดเส้นเชื่อมระหว่างอนุภาคที่ใกล้กัน
+          for (let i = 0; i < dots.length; i++) {
+            for (let j = i + 1; j < dots.length; j++) {
+              const dx = dots[i].x - dots[j].x;
+              const dy = dots[i].y - dots[j].y;
+              const dist = Math.sqrt(dx * dx + dy * dy);
+              if (dist < 100) {
+                const alpha = Math.floor((1 - dist / 100) * 200).toString(16).padStart(2, '0');
+                ctx.beginPath();
+                ctx.strokeStyle = accent + alpha;
+                ctx.lineWidth = 1.2;
+                ctx.moveTo(dots[i].x, dots[i].y);
+                ctx.lineTo(dots[j].x, dots[j].y);
+                ctx.stroke();
+              }
+            }
+          }
+          raf = requestAnimationFrame(draw);
+        };
+        draw();
+        return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', resize); };
+      }, [accent]);
+
+      return <canvas ref={canvasRef} style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0, opacity: 0.18 }} />;
+    };
+
+    /* ============================================ */
+    /* MODAL WRAPPER COMPONENT                        */
+    /* ============================================ */
+    /* 
+      Modal: พื้นหลังมืดและ container สำหรับ modal
+      Props:
+        - onClose: ฟังก์ชันปิด modal
+        - children: เนื้อหาที่จะแสดงใน modal
+        - wide: ถ้า true จะกว้างขึ้น (max-w-lg)
+    */
+    const Modal = ({ onClose, children, wide }) => (
+      <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center animate-fadeIn modal-overlay" onClick={onClose}>
+        <div className={`w-full ${wide ? 'max-w-lg' : 'max-w-sm'} animate-slideInUp`}
+          style={{ background: 'var(--dim)', border: '1px solid var(--border)', borderRadius: '20px 20px 0 0', maxHeight: '90vh', overflowY: 'auto' }}
+          onClick={e => e.stopPropagation()}>
+          {children}
+        </div>
+      </div>
+    );
+
+    /* ============================================ */
+    /* THEME MANAGER COMPONENT                        */
+    /* ============================================ */
+    /* 
+      ThemeManager: จัดการธีม, ฟอนต์, ภาษา
+      Props:
+        - onClose: ปิด modal
+        - uiTheme: ธีมปัจจุบัน
+        - onUIThemeChange: เปลี่ยนธีม
+        - currentFont: ฟอนต์ปัจจุบัน
+        - onFontChange: เปลี่ยนฟอนต์
+    */
+    const ThemeManager = ({ onClose, uiTheme, onUIThemeChange, currentFont, onFontChange }) => {
+      const { t, lang, setLang } = useLang();
+      const [tab, setTab] = useState('ui');
+      const handleFontChange = (fontId) => { onFontChange(fontId); setActiveFont(fontId); };
+      return (
+        <Modal onClose={onClose} wide>
+          <div style={{ padding: '24px', fontFamily: 'var(--mono)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+              <span style={{ fontSize: '11px', letterSpacing: '0.2em', color: 'var(--accent)', textTransform: 'uppercase' }}>{t.themeTitle}</span>
+              <button onClick={onClose} style={{ background: 'none', border: '1px solid var(--border)', color: 'var(--text-muted)', padding: '4px 12px', borderRadius: '4px', cursor: 'pointer', fontSize: '11px' }}>ESC</button>
+            </div>
+            <div style={{ display: 'flex', gap: '6px', marginBottom: '20px' }}>
+              {['ui', 'font', 'lang'].map(tb => (
+                <button key={tb} onClick={() => setTab(tb)}
+                  style={{ flex: 1, padding: '8px', border: '1px solid', borderColor: tab === tb ? 'var(--accent)' : 'var(--border)', background: tab === tb ? 'var(--accent)' : 'transparent', color: tab === tb ? 'var(--ink)' : 'var(--text-muted)', fontSize: '9px', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', borderRadius: '4px', fontFamily: 'var(--mono)' }}>
+                  {tb === 'ui' ? t.uiSkin : tb === 'font' ? t.fontFamily : t.language}
+                </button>
+              ))}
+            </div>
+            {tab === 'ui' && (
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', maxHeight: '400px', overflowY: 'auto' }}>
+                {UI_THEMES.map(th => (
+                  <button key={th.id} onClick={() => { onUIThemeChange(th.id); onClose(); }}
+                    style={{ padding: '16px', border: '1px solid', borderColor: uiTheme === th.id ? th.accent : 'var(--border)', background: `linear-gradient(135deg, ${th.bgFrom}, ${th.bgTo})`, borderRadius: '8px', cursor: 'pointer', fontFamily: 'var(--mono)', fontSize: '11px', color: th.accent, letterSpacing: '0.1em', textShadow: '0 0 5px rgba(0,0,0,0.5)', transition: 'transform 0.15s', transform: uiTheme === th.id ? 'scale(1.03)' : 'scale(1)' }}>
+                    {th.name}{uiTheme === th.id && <span style={{ marginLeft: '8px' }}>✓</span>}
+                  </button>
+                ))}
+              </div>
+            )}
+            {tab === 'font' && (
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '10px', maxHeight: '400px', overflowY: 'auto' }}>
+                {FONT_OPTIONS.map(font => (
+                  <button key={font.id} onClick={() => handleFontChange(font.id)}
+                    style={{ padding: '20px', border: '1px solid', borderColor: currentFont === font.id ? 'var(--accent)' : 'var(--border)', background: currentFont === font.id ? 'var(--accent)22' : 'transparent', borderRadius: '8px', cursor: 'pointer', textAlign: 'left', transition: 'all 0.15s' }}>
+                    <div style={{ fontSize: '14px', marginBottom: '4px', fontFamily: 'var(--body)' }}>{font.name}</div>
+                    <div style={{ fontSize: '10px', color: 'var(--text-muted)', fontFamily: 'var(--mono)' }}>{font.description}</div>
+                    {currentFont === font.id && <div style={{ fontSize: '10px', color: 'var(--accent)', marginTop: '8px' }}>✓</div>}
+                  </button>
+                ))}
+              </div>
+            )}
+            {tab === 'lang' && (
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px' }}>
+                {Object.entries(TRANSLATIONS).map(([code, tr]) => (
+                  <button key={code} onClick={() => { setLang(code); localStorage.setItem('appLang', code); onClose(); }}
+                    style={{ padding: '20px 8px', border: '1px solid', borderColor: lang === code ? 'var(--accent)' : 'var(--border)', background: lang === code ? 'var(--accent)22' : 'transparent', borderRadius: '8px', cursor: 'pointer', textAlign: 'center', transition: 'all 0.15s' }}>
+                    <div style={{ fontSize: '24px', marginBottom: '6px' }}>{tr.langFlag}</div>
+                    <div style={{ fontSize: '10px', color: lang === code ? 'var(--accent)' : 'var(--text-muted)', fontWeight: 700, fontFamily: 'var(--mono)' }}>{tr.langName}</div>
+                    {lang === code && <div style={{ fontSize: '10px', color: 'var(--accent)', marginTop: '4px' }}>✓</div>}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </Modal>
+      );
+    };
+
+    /* ============================================ */
+    /* TASK CARD COMPONENT — ✨ with hover + glow     */
+    /* ============================================ */
+    /* 
+      TaskCard: แสดงข้อมูลงานแต่ละรายการ
+      Props:
+        - task: ข้อมูลงาน { id, client, channel, type, details, deadline, status, priority }
+        - isAdmin: โหมดแอดมิน (แก้ไขได้)
+        - onEdit: เรียกเมื่อคลิกการ์ด (สำหรับแอดมิน)
+        - onToggleDoing: เปลี่ยนสถานะเป็น doing/todo
+        - onToggleStatus: เปลี่ยนสถานะเป็น done/todo
+        - accent, accent2: สีหลัก
+    */
+    const TaskCard = ({ task, isAdmin, onEdit, onToggleDoing, onToggleStatus, accent, accent2 }) => {
+      const { t } = useLang();
+      const chClass = task.channel === 'LINE' ? 'ch-LINE' : task.channel === 'FB' || task.channel === 'FACEBOOK' ? 'ch-FB' : task.channel === 'IG' ? 'ch-IG' : (task.channel === 'DISCORD' || task.channel === 'Discord') ? 'ch-DISCORD' : 'ch-other';
+      const statusClass = `status-${task.status}`;
+
+      return (
+        <div
+          onClick={() => isAdmin && onEdit(task)}
+          className={`${statusClass} ${isAdmin ? 'task-card' : 'task-card-guest'}`}
+          style={{
+            background: 'var(--dim)',
+            border: '1px solid var(--border)',
+            borderRadius: '8px',
+            padding: '14px 16px',
+            cursor: isAdmin ? 'pointer' : 'default',
+            marginBottom: '8px',
+            position: 'relative',
+            overflow: 'hidden',
+            boxShadow: task.status === 'doing' ? `0 0 20px ${accent}18, 0 2px 8px rgba(0,0,0,0.3)` : task.status === 'done' ? 'none' : '0 2px 8px rgba(0,0,0,0.2)',
+          }}
+        >
+          {task.status === 'doing' && (
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: `linear-gradient(to right, transparent, ${accent}, transparent)`, opacity: 0.9 }} />
+          )}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', minWidth: 0 }}>
+              <span style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: '14px', color: task.status === 'done' ? 'var(--text-muted)' : 'var(--paper)', textDecoration: task.status === 'done' ? 'line-through' : 'none', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '140px' }}>
+                {task.client}
+              </span>
+              <span className={chClass} style={{ fontFamily: 'var(--mono)', fontSize: '8px', padding: '2px 8px', borderRadius: '3px', border: '1px solid', letterSpacing: '0.1em', fontWeight: 700, textTransform: 'uppercase', flexShrink: 0 }}>
+                {task.channel}
+              </span>
+              {task.priority === 'urgent' && (
+                <span style={{ fontFamily: 'var(--mono)', fontSize: '8px', color: accent2, border: `1px solid ${accent2}`, padding: '2px 8px', borderRadius: '3px', flexShrink: 0, animation: 'blink 2s step-end infinite' }}>งานด่วน</span>
+              )}
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
+              {isAdmin ? (
+                <>
+                  <button onClick={e => { e.stopPropagation(); onToggleDoing(e, task.id); }}
+                    className="transition-all duration-150 hover:scale-110 active:scale-90"
+                    style={{ width: '26px', height: '26px', borderRadius: '4px', border: '1px solid', borderColor: task.status === 'doing' ? accent : 'var(--border)', background: task.status === 'doing' ? `${accent}22` : 'transparent', color: task.status === 'doing' ? accent : 'var(--text-muted)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+                    <span className={task.status === 'doing' ? 'spin-slow' : ''} style={{ display: 'flex' }}><Ico.Loader size={12} /></span>
+                  </button>
+                  <button onClick={e => { e.stopPropagation(); onToggleStatus(e, task.id); }}
+                    className="transition-all duration-150 hover:scale-110 active:scale-90"
+                    style={{ width: '26px', height: '26px', borderRadius: '4px', border: '1px solid', borderColor: task.status === 'done' ? '#4caf50' : 'var(--border)', background: task.status === 'done' ? '#4caf5022' : 'transparent', color: task.status === 'done' ? '#4caf50' : 'var(--text-muted)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+                    <Ico.Check />
+                  </button>
+                </>
+              ) : (
+                <span style={{ fontFamily: 'var(--mono)', fontSize: '9px', letterSpacing: '0.1em', color: task.status === 'doing' ? accent : task.status === 'done' ? '#4caf50' : 'var(--text-muted)', border: '1px solid', borderColor: task.status === 'doing' ? `${accent}44` : task.status === 'done' ? '#4caf5044' : 'var(--border)', padding: '3px 8px', borderRadius: '3px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  {task.status === 'doing' && <><span className="spin-slow" style={{ display: 'flex' }}><Ico.Loader size={9} /></span> {t.statusWip}</>}
+                  {task.status === 'done' && <><Ico.Check /> {t.statusDone}</>}
+                  {task.status === 'todo' && <><Ico.Clock /> {t.statusWait}</>}
+                </span>
+              )}
+            </div>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ minWidth: 0 }}>
+              <span style={{ fontFamily: 'var(--mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{task.type}</span>
+              {task.details && <div style={{ fontFamily: 'var(--body)', fontSize: '11px', color: task.status === 'done' ? 'var(--text-muted)' : 'var(--paper)', marginTop: '2px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '200px', textDecoration: task.status === 'done' ? 'line-through' : 'none' }}>{task.details}</div>}
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--text-muted)', fontFamily: 'var(--mono)', fontSize: '10px', flexShrink: 0 }}>
+              <Ico.Cal />
+              {new Date(task.deadline).toLocaleDateString('th-TH', { day: '2-digit', month: '2-digit', year: '2-digit' })}
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    /* ============================================ */
+    /* CALENDAR VIEW COMPONENT                        */
+    /* ============================================ */
+    /* 
+      CalendarView: แสดงปฏิทินรายเดือน
+      Props:
+        - currentMonth: วันที่ของเดือนที่แสดง
+        - setCurrentMonth: เปลี่ยนเดือน
+        - selectedDate: วันที่เลือก (YYYY-MM-DD)
+        - setSelectedDate: เปลี่ยนวันที่เลือก
+        - today: วันที่วันนี้
+        - tasks: รายการงานทั้งหมด
+        - accent: สีหลัก
+    */
+    const CalendarView = ({ currentMonth, setCurrentMonth, selectedDate, setSelectedDate, today, tasks, accent }) => {
+      const year = currentMonth.getFullYear(), month = currentMonth.getMonth();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const firstDay = new Date(year, month, 1).getDay();
+      const days = [];
+      for (let i = 0; i < firstDay; i++) days.push(null);
+      for (let i = 1; i <= daysInMonth; i++) days.push(i);
+      const MONTHS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+      const DAYS = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"];
+      return (
+        <div style={{ background: 'var(--dim)', border: '1px solid var(--border)', borderRadius: '12px', padding: '20px', marginBottom: '16px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+            <button onClick={() => setCurrentMonth(new Date(year, month - 1, 1))} style={{ background: 'none', border: '1px solid var(--border)', color: 'var(--text-muted)', width: '28px', height: '28px', borderRadius: '4px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="transition-all hover:border-[var(--accent)] hover:text-[var(--accent)]"><Ico.Chevron dir="left" /></button>
+            <span style={{ fontFamily: 'var(--mono)', fontSize: '13px', letterSpacing: '0.2em', color: accent }}>{MONTHS[month]} {year}</span>
+            <button onClick={() => setCurrentMonth(new Date(year, month + 1, 1))} style={{ background: 'none', border: '1px solid var(--border)', color: 'var(--text-muted)', width: '28px', height: '28px', borderRadius: '4px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="transition-all hover:border-[var(--accent)] hover:text-[var(--accent)]"><Ico.Chevron /></button>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '4px', marginBottom: '8px' }}>
+            {DAYS.map(d => <div key={d} style={{ textAlign: 'center', fontFamily: 'var(--mono)', fontSize: '9px', color: 'var(--text-muted)', letterSpacing: '0.1em' }}>{d}</div>)}
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '4px' }}>
+            {days.map((day, idx) => {
+              if (!day) return <div key={`e-${idx}`} />;
+              const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+              const isSelected = selectedDate === dateStr, isToday = today === dateStr;
+              const hasTasks = tasks.some(t => t.deadline === dateStr);
+              return (
+                <div key={dateStr} onClick={() => setSelectedDate(dateStr)}
+                  className="transition-all duration-100 hover:scale-105"
+                  style={{ height: '34px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '4px', cursor: 'pointer', background: isSelected ? accent : isToday ? `${accent}22` : 'transparent', border: `1px solid ${isSelected ? accent : isToday ? `${accent}66` : 'transparent'}`, position: 'relative' }}>
+                  <span style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: isSelected ? 'var(--ink)' : isToday ? accent : 'var(--paper)', fontWeight: isSelected || isToday ? 700 : 400 }}>{day}</span>
+                  {hasTasks && !isSelected && <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: accent, position: 'absolute', bottom: '3px' }} />}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      );
+    };
+
+    /* ============================================ */
+    /* ✨ PROGRESS WIDGET — with shimmer bar         */
+    /* ============================================ */
+    /* 
+      ProgressWidget: แสดงความคืบหน้าของงานวันนี้
+      Props:
+        - progress: เปอร์เซ็นต์ความสำเร็จ (0-100)
+        - doneToday: จำนวนที่เสร็จแล้ววันนี้
+        - todayLen: จำนวนงานทั้งหมดวันนี้
+        - accent: สีหลัก
+    */
+    const ProgressWidget = ({ progress, doneToday, todayLen, accent }) => {
+      const { t } = useLang();
+      return (
+        <div style={{ background: 'var(--dim)', border: '1px solid var(--border)', borderRadius: '12px', padding: '16px', flex: '1' }}>
+          <div style={{ fontFamily: 'var(--mono)', fontSize: '9px', letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '10px' }}>{t.today}</div>
+          <div style={{ fontFamily: 'var(--display)', fontSize: '36px', fontWeight: 800, color: progress === 100 && todayLen > 0 ? accent : 'var(--paper)', lineHeight: 1, marginBottom: '8px', transition: 'color 0.5s ease' }}>
+            {progress}<span style={{ fontSize: '16px', fontWeight: 400, color: 'var(--text-muted)' }}>%</span>
+          </div>
+          {/* ✨ Shimmer progress bar */}
+          <div style={{ height: '4px', background: 'var(--muted)', borderRadius: '2px', overflow: 'hidden', marginBottom: '8px' }}>
+            <div className={progress > 0 ? 'shimmer-bar' : ''}
+              style={{ height: '100%', width: `${progress}%`, background: progress === 100 ? accent : `linear-gradient(90deg, ${accent}aa, ${accent})`, borderRadius: '2px', transition: 'width 0.6s cubic-bezier(0.34,1.56,0.64,1)' }} />
+          </div>
+          <div style={{ fontFamily: 'var(--mono)', fontSize: '9px', color: 'var(--text-muted)' }}>{doneToday}/{todayLen} {t.tasks}</div>
+        </div>
+      );
+    };
+
+    /* ============================================ */
+    /* QUEUE WIDGET                                  */
+    /* ============================================ */
+    /* 
+      QueueWidget: แสดงคิวถัดไป
+      Props:
+        - isAdmin: โหมดแอดมิน (สามารถเลือกวันที่เองได้)
+        - nextQueueDate: วันที่คิวถัดไป
+        - selectedNextDate: วันที่ที่แอดมินเลือก
+        - handleSetManualDate: ฟังก์ชันเปลี่ยนวันที่
+        - waitingCount: จำนวนงานที่รอ
+        - accent: สีหลัก
+    */
+    const QueueWidget = ({ isAdmin, nextQueueDate, selectedNextDate, handleSetManualDate, waitingCount, accent }) => {
+      const { t } = useLang();
+      return (
+        <div style={{ background: 'var(--dim)', border: '1px solid var(--border)', borderRadius: '12px', padding: '16px', flex: '1', position: 'relative' }}>
+          {isAdmin && <input type="date" value={selectedNextDate || nextQueueDate} onChange={e => handleSetManualDate(e.target.value)} style={{ position: 'absolute', inset: 0, opacity: 0, cursor: 'pointer', width: '100%', height: '60%', zIndex: 1 }} />}
+          <div style={{ fontFamily: 'var(--mono)', fontSize: '9px', letterSpacing: '0.2em', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '10px' }}>{t.nextSlot}</div>
+          <div style={{ fontFamily: 'var(--display)', fontSize: '32px', fontWeight: 800, color: 'var(--paper)', lineHeight: 1 }}>
+            {new Date(nextQueueDate).getDate()}
+          </div>
+          <div style={{ fontFamily: 'var(--mono)', fontSize: '10px', color: accent, marginBottom: '8px' }}>
+            {new Date(nextQueueDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }).toUpperCase()}
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: waitingCount > 0 ? accent : '#555', flexShrink: 0 }} />
+            <span style={{ fontFamily: 'var(--mono)', fontSize: '9px', color: 'var(--text-muted)' }}>{waitingCount} {t.pending}</span>
+          </div>
+          {isAdmin && selectedNextDate && (
+            <button onClick={e => { e.stopPropagation(); handleSetManualDate(''); }} style={{ position: 'absolute', bottom: '10px', right: '12px', fontFamily: 'var(--mono)', fontSize: '8px', color: accent, background: 'none', border: `1px solid ${accent}44`, padding: '2px 8px', borderRadius: '3px', cursor: 'pointer', zIndex: 2 }}>
+              {t.auto}
+            </button>
+          )}
+        </div>
+      );
+    };
+
+    /* ============================================ */
+    /* SITE SETTINGS MODAL                            */
+    /* ============================================ */
+    /* 
+      SiteSettingsModal: เปลี่ยนชื่อเว็บและ favicon
+      Props:
+        - onClose: ปิด modal
+        - currentFavicon: favicon URL ปัจจุบัน
+        - currentSiteTitle: ชื่อเว็บปัจจุบัน
+        - onSaveFavicon: บันทึก favicon
+        - onSaveSiteTitle: บันทึกชื่อเว็บ
+        - accent: สีหลัก
+    */
+    const SiteSettingsModal = ({ onClose, currentFavicon, currentSiteTitle, onSaveFavicon, onSaveSiteTitle, accent }) => {
+      const { t } = useLang();
+      const [favUrl, setFavUrl] = useState(currentFavicon || '');
+      const [title, setTitle] = useState(currentSiteTitle || '');
+      const [msg, setMsg] = useState('');
+      const save = async (fn, val) => { await fn(val); setMsg(t.saved); setTimeout(() => setMsg(''), 2000); };
+      return (
+        <Modal onClose={onClose}>
+          <div style={{ padding: '24px', fontFamily: 'var(--mono)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+              <span style={{ fontSize: '11px', letterSpacing: '0.2em', color: accent, textTransform: 'uppercase' }}>{t.settingsTitle}</span>
+              <button onClick={onClose} style={{ background: 'none', border: '1px solid var(--border)', color: 'var(--text-muted)', padding: '4px 12px', borderRadius: '4px', cursor: 'pointer', fontSize: '11px' }}>ESC</button>
+            </div>
+            {msg && <div style={{ background: `${accent}22`, border: `1px solid ${accent}44`, color: accent, padding: '8px 12px', borderRadius: '6px', fontSize: '10px', marginBottom: '16px' }}>{msg}</div>}
+            <div style={{ marginBottom: '16px' }}>
+              <label style={{ display: 'block', fontSize: '9px', letterSpacing: '0.15em', color: 'var(--text-muted)', marginBottom: '8px', textTransform: 'uppercase' }}>{t.siteTitle}</label>
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <input value={title} onChange={e => setTitle(e.target.value)} style={{ flex: 1, background: 'var(--muted)', border: '1px solid var(--border)', color: 'var(--paper)', padding: '10px 12px', borderRadius: '6px', fontFamily: 'var(--mono)', fontSize: '12px', outline: 'none' }} placeholder="NEXO" />
+                <button onClick={() => save(onSaveSiteTitle, title)} style={{ background: accent, color: 'var(--ink)', border: 'none', padding: '10px 16px', borderRadius: '6px', fontFamily: 'var(--mono)', fontSize: '10px', fontWeight: 700, cursor: 'pointer' }}>{t.save}</button>
+              </div>
+            </div>
+            <div>
+              <label style={{ display: 'block', fontSize: '9px', letterSpacing: '0.15em', color: 'var(--text-muted)', marginBottom: '8px', textTransform: 'uppercase' }}>{t.faviconUrl}</label>
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <input value={favUrl} onChange={e => setFavUrl(e.target.value)} style={{ flex: 1, background: 'var(--muted)', border: '1px solid var(--border)', color: 'var(--paper)', padding: '10px 12px', borderRadius: '6px', fontFamily: 'var(--mono)', fontSize: '10px', outline: 'none' }} placeholder="https://..." />
+                <button onClick={() => save(onSaveFavicon, favUrl)} style={{ background: 'var(--muted)', color: 'var(--paper)', border: '1px solid var(--border)', padding: '10px 16px', borderRadius: '6px', fontFamily: 'var(--mono)', fontSize: '10px', cursor: 'pointer' }}>{t.save}</button>
+              </div>
+            </div>
+          </div>
+        </Modal>
+      );
+    };
+
+    /* ============================================ */
+    /* AUTH MODAL                                    */
+    /* ============================================ */
+    /* 
+      AuthModal: หน้าจอเข้าสู่ระบบสำหรับแอดมิน
+      Props:
+        - onClose: ปิด modal
+        - onLogin: ฟังก์ชันเมื่อล็อกอินสำเร็จ
+        - accent: สีหลัก
+    */
+    const AuthModal = ({ onClose, onLogin, accent }) => {
+      const { t } = useLang();
+      const [pw, setPw] = useState('');
+      const [err, setErr] = useState(false);
+      const [loading, setLoading] = useState(false);
+      const handle = async e => {
+        e.preventDefault(); setLoading(true); setErr(false);
+        const res = await window.fetchAPI({ action: 'verifyAdminPassword', inputPassword: pw });
+        setLoading(false);
+        if (res.isValid) onLogin(); else setErr(true);
+      };
+      return (
+        <Modal onClose={onClose}>
+          <form onSubmit={handle} style={{ padding: '28px', fontFamily: 'var(--mono)' }}>
+            <div style={{ marginBottom: '24px' }}>
+              <div style={{ fontSize: '11px', letterSpacing: '0.2em', color: accent, marginBottom: '4px', textTransform: 'uppercase' }}>{t.adminAccess}</div>
+              <div style={{ fontSize: '22px', fontFamily: 'var(--display)', fontWeight: 800, color: 'var(--paper)' }}>{t.authenticate}</div>
+            </div>
+            <input type="password" required value={pw} onChange={e => { setPw(e.target.value); setErr(false); }}
+              style={{ width: '100%', background: 'var(--muted)', border: `1px solid ${err ? 'var(--accent2)' : 'var(--border)'}`, color: 'var(--paper)', padding: '14px 16px', borderRadius: '8px', fontFamily: 'var(--mono)', fontSize: '14px', letterSpacing: '0.3em', outline: 'none', textAlign: 'center', marginBottom: err ? '8px' : '16px', boxSizing: 'border-box', transition: 'border-color 0.2s' }}
+              placeholder="••••••••" />
+            {err && <div style={{ fontSize: '10px', color: 'var(--accent2)', marginBottom: '12px', letterSpacing: '0.1em' }}>{t.accessDenied}</div>}
+            <button type="submit" disabled={loading}
+              className="transition-all hover:opacity-90 active:scale-95"
+              style={{ width: '100%', background: accent, color: 'var(--ink)', border: 'none', padding: '14px', borderRadius: '8px', fontFamily: 'var(--mono)', fontSize: '12px', fontWeight: 700, cursor: loading ? 'not-allowed' : 'pointer', letterSpacing: '0.2em', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+              {loading ? <><span className="spin-slow" style={{ display: 'flex' }}><Ico.Loader /></span> {t.verifying}</> : t.loginBtn}
+            </button>
+          </form>
+        </Modal>
+      );
+    };
+
+    /* ============================================ */
+    /* TASK FORM MODAL                               */
+    /* ============================================ */
+    /* 
+      TaskFormModal: ฟอร์มเพิ่ม/แก้ไขงาน
+      Props:
+        - editingTask: งานที่กำลังแก้ไข (null ถ้าเพิ่มใหม่)
+        - taskTypes: รายการประเภทงาน
+        - channels: รายการช่องทาง
+        - nextQueueDate: วันที่คิวถัดไป (สำหรับ default deadline)
+        - onClose: ปิด modal
+        - onSave: บันทึกงาน
+        - onDelete: ลบงาน
+        - accent, accent2: สีหลัก
+    */
+    const TaskFormModal = ({ editingTask, taskTypes, channels, nextQueueDate, onClose, onSave, onDelete, accent, accent2 }) => {
+      const { t } = useLang();
+      const [saving, setSaving] = useState(false);
+      const [delConfirm, setDelConfirm] = useState(false);
+      const [copied, setCopied] = useState(false);
+      const [isUrgent, setIsUrgent] = useState(editingTask?.priority === 'urgent' || false); // เพิ่ม state สำหรับ urgent
+
+      const copy = (text) => { navigator.clipboard.writeText(text).then(() => { setCopied(true); setTimeout(() => setCopied(false), 2000); }); };
+
+      const handleSubmit = async (e) => {
+        e.preventDefault(); setSaving(true);
+        const f = new FormData(e.target);
+        await onSave({
+          id: editingTask?.id || null,
+          title: '',
+          client: f.get('client'),
+          type: f.get('type'),
+          channel: f.get('channel'),
+          priority: isUrgent ? 'urgent' : 'normal',
+          deadline: f.get('deadline'),
+          details: f.get('details')
+        });
+        setSaving(false);
+      };
+
+      return (
+        <Modal onClose={onClose}>
+          <form onSubmit={handleSubmit} style={{ padding: '24px', fontFamily: 'var(--mono)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+              <span style={{ fontSize: '11px', letterSpacing: '0.2em', color: accent, textTransform: 'uppercase' }}>{editingTask ? t.editTask : t.newTask}</span>
+              <button type="button" onClick={onClose} style={{ background: 'none', border: '1px solid var(--border)', color: 'var(--text-muted)', padding: '4px 12px', borderRadius: '4px', cursor: 'pointer', fontSize: '11px' }}>ESC</button>
+            </div>
+            {editingTask?.id && (
+              <div style={{ background: 'var(--muted)', border: '1px solid var(--border)', borderRadius: '6px', padding: '10px 12px', marginBottom: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  <div style={{ fontSize: '8px', color: 'var(--text-muted)', letterSpacing: '0.15em', marginBottom: '2px' }}>{t.taskId}</div>
+                  <div style={{ fontSize: '10px', color: 'var(--paper)' }}>{editingTask.id}</div>
+                </div>
+                <button type="button" onClick={() => copy(editingTask.id)} style={{ background: copied ? `${accent}22` : 'none', border: `1px solid ${copied ? accent : 'var(--border)'}`, color: copied ? accent : 'var(--text-muted)', padding: '4px 10px', borderRadius: '4px', cursor: 'pointer', fontSize: '9px', letterSpacing: '0.1em', display: 'flex', alignItems: 'center', gap: '4px', transition: 'all 0.2s' }}>
+                  <Ico.Copy />{copied ? t.copied : t.copy}
+                </button>
+              </div>
+            )}
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '12px' }}>
+              <label style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                cursor: 'pointer',
+                padding: '4px 8px',
+                borderRadius: '4px',
+                userSelect: 'none'
+              }}>
+                <span style={{
+                  fontFamily: 'var(--mono)',
+                  fontSize: '10px',
+                  color: 'var(--text-muted)',
+                  letterSpacing: '0.1em'
+                }}>
+                  {t.urgent}
+                </span>
+                <input
+                  type="checkbox"
+                  checked={isUrgent}
+                  onChange={(e) => setIsUrgent(e.target.checked)}
+                  style={{ display: 'none' }}
+                />
+                <div
+                  style={{
+                    width: '36px',
+                    height: '18px',
+                    background: isUrgent ? `${accent2}33` : 'var(--muted)',
+                    borderRadius: '10px',
+                    position: 'relative',
+                    border: `1px solid ${isUrgent ? accent2 : 'var(--border)'}`,
+                    transition: 'all 0.2s ease',
+                    pointerEvents: 'none' // ป้องกันไม่ให้ div รับ events
+                  }}
+                >
+                  <div style={{
+                    position: 'absolute',
+                    width: '14px',
+                    height: '14px',
+                    borderRadius: '50%',
+                    background: isUrgent ? accent2 : 'var(--text-muted)',
+                    top: '1px',
+                    transition: 'left 0.2s ease',
+                    left: isUrgent ? '20px' : '2px',
+                    boxShadow: isUrgent ? `0 0 8px ${accent2}` : 'none'
+                  }} />
+                </div>
+              </label>
+            </div>
+            {[
+              { name: 'client', placeholder: t.clientPlaceholder, required: true, list: null, defaultVal: editingTask?.client },
+              { name: 'type', placeholder: t.typePlaceholder, required: true, list: 'typeList', defaultVal: editingTask?.type },
+              { name: 'channel', placeholder: t.channelPlaceholder, required: true, list: 'channelList', defaultVal: editingTask?.channel },
+            ].map(f => (
+              <div key={f.name} style={{ marginBottom: '10px' }}>
+                <input name={f.name} required={f.required} defaultValue={f.defaultVal || ''} list={f.list || undefined}
+                  style={{ width: '100%', background: 'var(--muted)', border: '1px solid var(--border)', color: 'var(--paper)', padding: '12px 14px', borderRadius: '6px', fontFamily: 'var(--mono)', fontSize: '11px', outline: 'none', boxSizing: 'border-box', transition: 'border-color 0.2s' }}
+                  onFocus={e => e.target.style.borderColor = accent}
+                  onBlur={e => e.target.style.borderColor = 'var(--border)'}
+                  placeholder={f.placeholder} />
+              </div>
+            ))}
+            <datalist id="typeList">{taskTypes.map(tp => <option key={tp} value={tp} />)}</datalist>
+            <datalist id="channelList">{channels.map(ch => <option key={ch} value={ch} />)}</datalist>
+            <textarea name="details" rows="2" defaultValue={editingTask?.details || ''}
+              style={{ width: '100%', background: 'var(--muted)', border: '1px solid var(--border)', color: 'var(--paper)', padding: '12px 14px', borderRadius: '6px', fontFamily: 'var(--body)', fontSize: '12px', outline: 'none', resize: 'none', marginBottom: '10px', boxSizing: 'border-box', transition: 'border-color 0.2s' }}
+              onFocus={e => e.target.style.borderColor = accent}
+              onBlur={e => e.target.style.borderColor = 'var(--border)'}
+              placeholder={t.detailsPlaceholder} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px', background: 'var(--muted)', border: '1px solid var(--border)', borderRadius: '6px', padding: '10px 14px' }}>
+              <Ico.Cal /><span style={{ fontSize: '9px', color: 'var(--text-muted)', letterSpacing: '0.15em', flex: 1, textTransform: 'uppercase' }}>{t.deadline}</span>
+              <input type="date" name="deadline" required defaultValue={editingTask?.deadline || nextQueueDate}
+                style={{ background: 'none', border: 'none', color: accent, fontFamily: 'var(--mono)', fontSize: '11px', outline: 'none', cursor: 'pointer' }} />
+            </div>
+            {saving ? (
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '14px', color: 'var(--text-muted)', fontFamily: 'var(--mono)', fontSize: '11px' }}>
+                <span className="spin-slow" style={{ display: 'flex' }}><Ico.Loader /></span> {t.saving}
+              </div>
+            ) : (
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <button type="submit" className="transition-all hover:opacity-90 active:scale-95"
+                  style={{ flex: 1, background: accent, color: 'var(--ink)', border: 'none', padding: '14px', borderRadius: '8px', fontFamily: 'var(--mono)', fontSize: '11px', fontWeight: 700, cursor: 'pointer', letterSpacing: '0.15em' }}>
+                  {editingTask ? t.update : t.create}
+                </button>
+                {editingTask && (
+                  <button type="button" onClick={() => setDelConfirm(true)} className="transition-all hover:text-red-400 active:scale-95"
+                    style={{ width: '46px', background: 'var(--muted)', border: '1px solid var(--border)', color: 'var(--text-muted)', borderRadius: '8px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Ico.Trash />
+                  </button>
+                )}
+              </div>
+            )}
+            {delConfirm && (
+              <div style={{ marginTop: '12px', background: '#ff475722', border: '1px solid #ff475766', borderRadius: '8px', padding: '12px', textAlign: 'center' }}>
+                <div style={{ fontSize: '10px', color: '#ff4757', letterSpacing: '0.1em', marginBottom: '10px' }}>{t.confirmDelete}</div>
+                <div style={{ display: 'flex', gap: '8px' }}>
+                  <button type="button" onClick={() => setDelConfirm(false)} style={{ flex: 1, background: 'var(--muted)', border: '1px solid var(--border)', color: 'var(--text-muted)', padding: '8px', borderRadius: '6px', cursor: 'pointer', fontFamily: 'var(--mono)', fontSize: '10px' }}>{t.cancel}</button>
+                  <button type="button" onClick={() => onDelete(editingTask.id)} style={{ flex: 1, background: '#ff4757', color: 'white', border: 'none', padding: '8px', borderRadius: '6px', cursor: 'pointer', fontFamily: 'var(--mono)', fontSize: '10px', fontWeight: 700 }}>{t.delete}</button>
+                </div>
+              </div>
+            )}
+          </form>
+        </Modal>
+      );
+    };
+
+    /* ============================================ */
+    /* IMAGE MODAL                                   */
+    /* ============================================ */
+    /* 
+      ImageModal: อัปโหลดรูปภาพ (รองรับ Google Drive ID)
+      Props:
+        - onClose: ปิด modal
+        - onSave: บันทึก URL รูปภาพ
+        - titleKey: คีย์ภาษา (updateProfile/updateBanner)
+        - accent: สีหลัก
+    */
+    const ImageModal = ({ onClose, onSave, titleKey, accent }) => {
+      const { t } = useLang();
+      const [url, setUrl] = useState('');
+      const handle = e => {
+        e.preventDefault(); if (!url) return;
+        let final = url;
+        const m = final.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || final.match(/id=([a-zA-Z0-9_-]+)/) || final.match(/\/d\/([a-zA-Z0-9_-]+)/);
+        if (m && m[1]) final = `https://drive.google.com/uc?export=view&id=${m[1]}`;
+        onSave(final);
+      };
+      return (
+        <Modal onClose={onClose}>
+          <form onSubmit={handle} style={{ padding: '24px', fontFamily: 'var(--mono)' }}>
+            <div style={{ fontSize: '11px', letterSpacing: '0.2em', color: accent, marginBottom: '20px', textTransform: 'uppercase' }}>{t[titleKey]}</div>
+            <input type="url" required value={url} onChange={e => setUrl(e.target.value)}
+              style={{ width: '100%', background: 'var(--muted)', border: '1px solid var(--border)', color: 'var(--paper)', padding: '12px 14px', borderRadius: '6px', fontFamily: 'var(--mono)', fontSize: '11px', outline: 'none', marginBottom: '12px', boxSizing: 'border-box' }}
+              placeholder="https://..." />
+            <button type="submit" className="transition-all hover:opacity-90 active:scale-95"
+              style={{ width: '100%', background: accent, color: 'var(--ink)', border: 'none', padding: '13px', borderRadius: '8px', fontFamily: 'var(--mono)', fontSize: '11px', fontWeight: 700, cursor: 'pointer', letterSpacing: '0.15em' }}>{t.uploadBtn}</button>
+          </form>
+        </Modal>
+      );
+    };
+
+    /* ============================================ */
+    /* MAIN APP COMPONENT                            */
+    /* ============================================ */
+    function App() {
+      /* ========================================== */
+      /* STATE DECLARATIONS                         */
+      /* ========================================== */
+      const [tasks, setTasks] = useState([]);                 // รายการงานทั้งหมด
+      const [taskTypes, setTaskTypes] = useState(['Logo', 'Banner', 'Artwork']); // ประเภทงาน (auto-complete)
+      const [channels, setChannels] = useState(['LINE', 'FB', 'IG']);            // ช่องทาง (auto-complete)
+      const [isLoading, setIsLoading] = useState(true);      // สถานะโหลดข้อมูล
+      const [view, setView] = useState('dashboard');          // มุมมองหลัก (dashboard/all)
+      const [isCalendarView, setIsCalendarView] = useState(false); // แสดงปฏิทินหรือไม่
+      const [currentMonth, setCurrentMonth] = useState(new Date()); // เดือนปัจจุบันในปฏิทิน
+      const [selectedDate, setSelectedDate] = useState(() => {      // วันที่เลือกในปฏิทิน (default วันนี้)
+        const d = new Date();
+        return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+      });
+      const [showModal, setShowModal] = useState(false);      // แสดง modal ฟอร์มงาน
+      const [editingTask, setEditingTask] = useState(null);   // งานที่กำลังแก้ไข
+      const [showAuth, setShowAuth] = useState(false);        // แสดง modal เข้าสู่ระบบ
+      const [showSettings, setShowSettings] = useState(false); // แสดง modal ตั้งค่าเว็บ
+      const [showTheme, setShowTheme] = useState(false);      // แสดง modal ธีม
+      const [showProfileImg, setShowProfileImg] = useState(false); // แสดง modal อัปโหลดรูปโปรไฟล์
+      const [showBannerImg, setShowBannerImg] = useState(false);   // แสดง modal อัปโหลดแบนเนอร์
+      const [isAdmin, setIsAdmin] = useState(false);          // สถานะแอดมิน
+      const [profileImage, setProfileImage] = useState(null); // URL รูปโปรไฟล์
+      const [bannerImage, setBannerImage] = useState(null);   // URL รูปแบนเนอร์
+      const [isBannerVisible, setIsBannerVisible] = useState(true); // แสดงแบนเนอร์หรือไม่
+      const [siteTitle, setSiteTitle] = useState('NEXO');     // ชื่อเว็บไซต์
+      const [favicon, setFavicon] = useState('');             // favicon URL
+      const [selectedNextDate, setSelectedNextDate] = useState(''); // วันที่คิวถัดไปที่แอดมินเลือก
+      const [searchQuery, setSearchQuery] = useState('');     // คำค้นหา
+      const [filterType, setFilterType] = useState('all');    // ตัวกรอง (all/pending/done/month)
+      const [uiTheme, setUITheme] = useState('dark');         // ธีมปัจจุบัน
+      const [currentFont, setCurrentFont] = useState('default'); // ฟอนต์ปัจจุบัน
+      const [lang, setLang] = useState(() => localStorage.getItem('appLang') || 'th'); // ภาษา
+
+      /* ✨ NEW: Toast state */
+      const [toasts, setToasts] = useState([]);               // รายการ toast ที่แสดง
+      const toastCounter = useRef(0);                          // ตัวนับ ID สำหรับ toast
+
+      /* ========================================== */
+      /* LANGUAGE & THEME HELPERS                    */
+      /* ========================================== */
+      const t = TRANSLATIONS[lang] || TRANSLATIONS.th;        // ข้อความตามภาษาที่เลือก
+
+      /* แสดง toast */
+      const showToast = useCallback((msg, type = 'success') => {
+        const id = ++toastCounter.current;
+        const currentThemeData = UI_THEMES.find(th => th.id === uiTheme) || UI_THEMES[0];
+        setToasts(prev => [...prev, { id, msg, type, accent: currentThemeData.accent }]);
+        setTimeout(() => setToasts(prev => prev.filter(t => t.id !== id)), 2800);
+      }, [uiTheme]);
+
+      const fetchAPI = window.fetchAPI;                        // API helper
+
+      const currentTheme = UI_THEMES.find(th => th.id === uiTheme) || UI_THEMES[0]; // ข้อมูลธีมปัจจุบัน
+      const accent = currentTheme.accent;                      // สีหลัก
+      const accent2 = currentTheme.accent2;                    // สีรอง
+      const uiClass = currentTheme.class || '';                // class เพิ่มเติม
+
+      /* อัปเดต favicon */
+      const updateFavicon = useCallback(url => {
+        ['apple-touch-icon', 'icon-192', 'shortcut-icon'].forEach(id => { const el = document.getElementById(id); if (el) el.href = url; });
+      }, []);
+
+      /* ========================================== */
+      /* INITIALIZATION (useEffect)                  */
+      /* ========================================== */
+      /* โหลดค่าที่บันทึกไว้จาก localStorage */
+      useEffect(() => {
+        const savedTheme = localStorage.getItem('uiTheme');
+        if (savedTheme) setUITheme(savedTheme);
+        const savedFont = localStorage.getItem('appFont');
+        if (savedFont) { setCurrentFont(savedFont); setActiveFont(savedFont); }
+        const savedLang = localStorage.getItem('appLang');
+        if (savedLang && TRANSLATIONS[savedLang]) setLang(savedLang);
+      }, []);
+
+      /* โหลดข้อมูลเริ่มต้นจาก Google Apps Script */
+      useEffect(() => {
+        fetch(window.APP_CONFIG.WEB_APP_URL + "?action=getInitialData", { redirect: "follow" })
+          .then(r => r.json())
+          .then(res => {
+            if (res.status === 'success') {
+              const d = res.data;
+              setTasks(d.tasks || []);
+              if (d.taskTypes?.length > 0) setTaskTypes(d.taskTypes);
+              if (d.channels?.length > 0) setChannels(d.channels);
+              if (d.profileImage) setProfileImage(d.profileImage);
+              if (d.bannerImage) setBannerImage(d.bannerImage);
+              if (d.bannerVisible !== undefined) setIsBannerVisible(d.bannerVisible);
+              if (d.lockedNextDate) setSelectedNextDate(d.lockedNextDate);
+              if (d.siteTitle) { setSiteTitle(d.siteTitle); document.title = d.siteTitle; }
+              if (d.favicon) { setFavicon(d.favicon); updateFavicon(d.favicon); }
+            }
+            setIsLoading(false);
+          })
+          .catch(() => setIsLoading(false));
+      }, []);
+
+      /* อัปเดต CSS variables เมื่อเปลี่ยนธีม */
+      useEffect(() => {
+        if (currentTheme) {
+          document.documentElement.style.setProperty('--bg-from', currentTheme.bgFrom);
+          document.documentElement.style.setProperty('--bg-to', currentTheme.bgTo);
+          document.documentElement.style.setProperty('--accent', currentTheme.accent);
+          document.documentElement.style.setProperty('--accent2', currentTheme.accent2);
+        }
+      }, [currentTheme]);
+
+      /* ========================================== */
+      /* COMPUTED VALUES (useMemo)                   */
+      /* ========================================== */
+      const today = useMemo(() => {
+        const d = new Date();
+        return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+      }, []);
+
+      const todayTasks = useMemo(() => tasks.filter(tk => tk.deadline === today), [tasks, today]);
+      const doneToday = useMemo(() => todayTasks.filter(tk => tk.status === 'done').length, [todayTasks]);
+      const progress = todayTasks.length === 0 ? 0 : Math.round((doneToday / todayTasks.length) * 100);
+      const waitingCount = useMemo(() => tasks.filter(tk => tk.status !== 'done').length, [tasks]);
+
+      /* คำนวณวันคิวถัดไป (วันที่ว่าง) */
+      const nextQueueDate = useMemo(() => {
+        if (selectedNextDate) return selectedNextDate;
+        let d = new Date();
+        for (let i = 0; i < 365; i++) {
+          const s = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+          if (tasks.filter(tk => tk.deadline === s).length === 0) return s;
+          d.setDate(d.getDate() + 1);
+        }
+        return today;
+      }, [tasks, selectedNextDate, today]);
+
+      /* ========================================== */
+      /* CALLBACK FUNCTIONS                          */
+      /* ========================================== */
+      /* เปลี่ยนสถานะงาน (done/todo) */
+      const toggleStatus = useCallback((e, id) => {
+        e.stopPropagation();
+        setTasks(prev => prev.map(tk => {
+          if (tk.id === id) { const s = tk.status === 'done' ? 'todo' : 'done'; fetchAPI({ action: 'updateTaskStatus', taskId: id, newStatus: s }); return { ...tk, status: s }; }
+          return tk;
+        }));
+      }, []);
+
+      /* เปลี่ยนสถานะงาน (doing/todo) */
+      const toggleDoing = useCallback((e, id) => {
+        e.stopPropagation();
+        setTasks(prev => prev.map(tk => {
+          if (tk.id === id) { const s = tk.status === 'doing' ? 'todo' : 'doing'; fetchAPI({ action: 'updateTaskStatus', taskId: id, newStatus: s }); return { ...tk, status: s }; }
+          return tk;
+        }));
+      }, []);
+
+      /* กำหนดวันที่คิวถัดไปด้วยตนเอง */
+      const handleSetManualDate = useCallback(v => {
+        setSelectedNextDate(v);
+        fetchAPI({ action: 'saveLockedNextDate', dateStr: v });
+      }, []);
+
+      /* บันทึก favicon */
+      const handleSaveFavicon = useCallback(async url => {
+        setFavicon(url); updateFavicon(url);
+        await fetchAPI({ action: 'saveFavicon', faviconUrl: url });
+        showToast(t.toastSaved);
+      }, [updateFavicon, showToast, t]);
+
+      /* บันทึกชื่อเว็บ */
+      const handleSaveSiteTitle = useCallback(async title => {
+        setSiteTitle(title); document.title = title;
+        await fetchAPI({ action: 'saveSiteTitle', title });
+        showToast(t.toastSaved);
+      }, [showToast, t]);
+
+      /* บันทึกงาน (เพิ่ม/แก้ไข) */
+      const handleSaveTask = async (taskData) => {
+        const isEdit = !!editingTask;
+        const res = await fetchAPI({ action: 'saveOrUpdateTask', task: taskData });
+        if (res.status === 'success') {
+          setTasks(prev => isEdit ? prev.map(tk => tk.id === res.task.id ? res.task : tk) : [...prev, res.task]);
+          showToast(isEdit ? t.toastUpdated : t.toastCreated); // ✨ Toast!
+        }
+        setShowModal(false); setEditingTask(null);
+      };
+
+      /* ลบงาน */
+      const handleDeleteTask = async (id) => {
+        await fetchAPI({ action: 'deleteTask', taskId: id });
+        setTasks(prev => prev.filter(tk => tk.id !== id));
+        showToast(t.toastDeleted, 'error'); // ✨ Toast!
+        setShowModal(false); setEditingTask(null);
+      };
+
+      /* เปลี่ยนธีม UI */
+      const handleUIThemeChange = (id) => {
+        setUITheme(id); localStorage.setItem('uiTheme', id);
+        const theme = UI_THEMES.find(th => th.id === id);
+        if (theme) {
+          document.documentElement.style.setProperty('--bg-from', theme.bgFrom);
+          document.documentElement.style.setProperty('--bg-to', theme.bgTo);
+          document.documentElement.style.setProperty('--accent', theme.accent);
+          document.documentElement.style.setProperty('--accent2', theme.accent2);
+        }
+      };
+
+      /* เปลี่ยนฟอนต์ */
+      const handleFontChange = (fontId) => {
+        setCurrentFont(fontId); localStorage.setItem('appFont', fontId); setActiveFont(fontId);
+      };
+
+      /* กรองงานตามคำค้นหาและตัวกรอง */
+      const filteredTasks = useMemo(() => tasks.filter(task => {
+        const q = searchQuery.toLowerCase();
+        const matchSearch = !q || task.client.toLowerCase().includes(q) || task.type.toLowerCase().includes(q) || (task.id && task.id.toLowerCase().includes(q));
+        const now = new Date();
+        const thisYearMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+        const matchFilter = filterType === 'all' || (filterType === 'pending' && task.status !== 'done') || (filterType === 'done' && task.status === 'done') || (filterType === 'month' && task.deadline && task.deadline.startsWith(thisYearMonth));
+        return matchSearch && matchFilter;
+      }), [tasks, searchQuery, filterType]);
+
+      const displayedTasks = (isCalendarView && filterType !== 'month') ? filteredTasks.filter(task => task.deadline === selectedDate) : filteredTasks;
+
+      /* ========================================== */
+      /* LOADING SCREEN                             */
+      /* ========================================== */
+      if (isLoading) return (
+        <LangContext.Provider value={{ lang, t, setLang }}>
+          <div className={`${uiClass}`} style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${currentTheme.bgFrom}, ${currentTheme.bgTo})`, fontFamily: 'var(--mono)' }}>
+            <div style={{ fontSize: '10px', letterSpacing: '0.4em', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '16px' }}>{t.loading}</div>
+            <div style={{ display: 'flex', gap: '6px' }}>
+              {[0, 1, 2].map(i => <div key={i} style={{ width: '4px', height: '4px', borderRadius: '50%', background: accent, animation: `blink 1s step-end infinite ${i * 0.2}s` }} />)}
+            </div>
+          </div>
+        </LangContext.Provider>
+      );
+
+      /* ========================================== */
+      /* MAIN RENDER                                */
+      /* ========================================== */
+      return (
+        <LangContext.Provider value={{ lang, t, setLang }}>
+          <div className={`${uiClass}`} style={{ minHeight: '100vh', background: `linear-gradient(135deg, var(--bg-from), var(--bg-to))`, fontFamily: 'var(--body)', transition: 'background 0.3s ease', position: 'relative' }}>
+
+            {/* ✨ PARTICLE CANVAS (เอฟเฟกต์พื้นหลัง) */}
+            <ParticleCanvas accent={accent} />
+
+            {/* เส้นสแกนแนวตั้ง */}
+            <div className="scan-line" />
+
+            {/* ✨ TOAST NOTIFICATIONS */}
+            <Toast toasts={toasts} />
+
+            {/* container หลัก - จำกัดความกว้าง 480px (mobile-first) */}
+            <div style={{ maxWidth: '480px', margin: '0 auto', minHeight: '100vh', paddingBottom: '90px', position: 'relative', zIndex: 1 }}>
+
+              {/* ======================================== */}
+              {/* HEADER SECTION                           */}
+              {/* ======================================== */}
+              <div style={{ padding: '20px 20px 0', position: 'relative', zIndex: 10 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6px' }}>
+                  <div>
+                    <div style={{ fontFamily: 'var(--mono)', fontSize: '9px', letterSpacing: '0.3em', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '2px' }}>
+                      NEXO/{isAdmin ? t.nexoAdmin : t.nexoUser}<span className="blink" style={{ color: accent }}>_</span>
+                    </div>
+                    {/* ✨ GLITCH TITLE */}
+                    <div
+                      className="glitch"
+                      data-text={siteTitle}
+                      style={{
+                        fontFamily: 'var(--display)',
+                        fontSize: '34px',
+                        fontWeight: 800,
+                        color: accent,
+                        letterSpacing: '-1px',
+                        lineHeight: 1,
+                        textShadow: `0 0 20px ${accent}44`,
+                      }}>
+                      {siteTitle}
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '8px' }}>
+                    <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+                      {isAdmin && (
+                        <>
+                          <button onClick={() => setShowTheme(true)} className="transition-all hover:scale-110 active:scale-90"
+                            style={{ background: 'none', border: '1px solid var(--border)', color: 'var(--text-muted)', width: '30px', height: '30px', borderRadius: '6px', cursor: 'pointer', fontSize: '13px', display: 'flex', alignItems: 'center', justifyContent: 'center' }} title={t.themeTitle}>🎨</button>
+                          <button onClick={() => setShowSettings(true)} className="transition-all hover:scale-110 active:scale-90"
+                            style={{ background: 'none', border: '1px solid var(--border)', color: 'var(--text-muted)', width: '30px', height: '30px', borderRadius: '6px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Ico.Settings /></button>
+                        </>
+                      )}
+                      <button onClick={() => isAdmin ? setIsAdmin(false) : setShowAuth(true)}
+                        className="transition-all hover:scale-105 active:scale-95"
+                        style={{ fontFamily: 'var(--mono)', fontSize: '8px', letterSpacing: '0.15em', background: isAdmin ? accent : 'var(--dim)', color: isAdmin ? 'var(--ink)' : 'var(--text-muted)', border: `1px solid ${isAdmin ? accent : 'var(--border)'}`, padding: '6px 10px', borderRadius: '4px', cursor: 'pointer', textTransform: 'uppercase' }}>
+                        {isAdmin ? t.logout : t.login}
+                      </button>
+                    </div>
+                    {/* รูปโปรไฟล์ - คลิกเปลี่ยนได้เฉพาะแอดมิน */}
+                    <div onClick={() => isAdmin && setShowProfileImg(true)}
+                      className={isAdmin ? 'transition-all hover:scale-110 active:scale-90' : ''}
+                      style={{ width: '44px', height: '44px', borderRadius: '8px', border: `2px solid ${isAdmin ? `${accent}44` : 'var(--border)'}`, overflow: 'hidden', cursor: isAdmin ? 'pointer' : 'default', flexShrink: 0, background: 'var(--dim)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      {profileImage ? <img src={profileImage} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <span style={{ fontSize: '20px' }}>🖤</span>}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Ticker (ข้อความวิ่ง) */}
+                <div className="ticker-wrap" style={{ borderTop: `1px solid var(--border)`, borderBottom: `1px solid var(--border)`, padding: '6px 0', overflow: 'hidden' }}>
+                  <div className="ticker-inner">
+                    {[...t.tickerItems, ...t.tickerItems].map((item, i) => (
+                      <span key={i} style={{ fontFamily: 'var(--mono)', fontSize: '8px', letterSpacing: '0.3em', color: 'var(--text-muted)', textTransform: 'uppercase', marginRight: '40px' }}>
+                        <span style={{ color: accent }}>◆</span> {item}{' '}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* ======================================== */}
+              {/* BANNER SECTION                           */}
+              {/* ======================================== */}
+              {bannerImage && isBannerVisible && (
+                <div style={{ margin: '16px 20px 0', position: 'relative', borderRadius: '10px', overflow: 'hidden', height: '110px' }}>
+                  <img src={bannerImage} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)' }} />
+                  {isAdmin && (
+                    <div style={{ position: 'absolute', bottom: '8px', right: '8px', display: 'flex', gap: '6px' }}>
+                      <button onClick={() => setShowBannerImg(true)} className="transition-all hover:scale-110" style={{ background: 'rgba(0,0,0,0.7)', border: '1px solid rgba(255,255,255,0.2)', color: 'white', width: '28px', height: '28px', borderRadius: '4px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Ico.Image /></button>
+                      <button onClick={() => { setIsBannerVisible(false); fetchAPI({ action: 'saveBannerVisibility', isVisible: false }); }} className="transition-all hover:scale-110" style={{ background: 'rgba(0,0,0,0.7)', border: '1px solid rgba(255,255,255,0.2)', color: 'white', width: '28px', height: '28px', borderRadius: '4px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Ico.EyeOff /></button>
+                    </div>
+                  )}
+                </div>
+              )}
+              {!bannerImage && isAdmin && (
+                <div onClick={() => setShowBannerImg(true)} className="transition-all hover:opacity-80"
+                  style={{ margin: '16px 20px 0', height: '52px', border: `1px dashed var(--border)`, borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: 'var(--text-muted)', fontFamily: 'var(--mono)', fontSize: '9px', letterSpacing: '0.2em' }}>
+                  {t.addBanner}
+                </div>
+              )}
+              {bannerImage && !isBannerVisible && isAdmin && (
+                <div style={{ margin: '16px 20px 0', display: 'flex', justifyContent: 'flex-end' }}>
+                  <button onClick={() => { setIsBannerVisible(true); fetchAPI({ action: 'saveBannerVisibility', isVisible: true }); }} style={{ fontFamily: 'var(--mono)', fontSize: '9px', color: 'var(--text-muted)', background: 'none', border: '1px solid var(--border)', padding: '4px 12px', borderRadius: '4px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}><Ico.Eye /> {t.showBanner}</button>
+                </div>
+              )}
+
+              {/* ======================================== */}
+              {/* MAIN CONTENT (DASHBOARD / ALL TASKS)    */}
+              {/* ======================================== */}
+              <div style={{ padding: '20px' }}>
+                {view === 'dashboard' ? (
+                  /* ---------- DASHBOARD VIEW (คิววันนี้) ---------- */
+                  <div className="animate-fadeIn">
+                    <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+                      <ProgressWidget progress={progress} doneToday={doneToday} todayLen={todayTasks.length} accent={accent} />
+                      <QueueWidget isAdmin={isAdmin} nextQueueDate={nextQueueDate} selectedNextDate={selectedNextDate} handleSetManualDate={handleSetManualDate} waitingCount={waitingCount} accent={accent} />
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                      <span style={{ fontFamily: 'var(--mono)', fontSize: '9px', letterSpacing: '0.3em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>{t.todayQueue}</span>
+                      <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
+                      <span style={{ fontFamily: 'var(--mono)', fontSize: '9px', color: accent }}>{todayTasks.length}</span>
+                    </div>
+                    {todayTasks.length > 0 ? todayTasks.map(tk => (
+                      <TaskCard key={tk.id} task={tk} isAdmin={isAdmin} onEdit={task => { setEditingTask(task); setShowModal(true); }} onToggleDoing={toggleDoing} onToggleStatus={toggleStatus} accent={accent} accent2={accent2} />
+                    )) : (
+                      <div style={{ textAlign: 'center', padding: '40px 0', border: '1px dashed var(--border)', borderRadius: '8px' }}>
+                        <div style={{ fontFamily: 'var(--mono)', fontSize: '10px', letterSpacing: '0.3em', color: 'var(--text-muted)' }}>{t.noTasksToday}</div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  /* ---------- ALL TASKS VIEW (พร้อมค้นหา/กรอง) ---------- */
+                  <div className="animate-fadeIn">
+                    {/* ช่องค้นหา */}
+                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }}><Ico.Search /></div>
+                      <input value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
+                        style={{ width: '100%', background: 'var(--dim)', border: '1px solid var(--border)', color: 'var(--paper)', padding: '12px 12px 12px 40px', borderRadius: '8px', fontFamily: 'var(--mono)', fontSize: '11px', outline: 'none', boxSizing: 'border-box', transition: 'border-color 0.2s' }}
+                        onFocus={e => e.target.style.borderColor = accent}
+                        onBlur={e => e.target.style.borderColor = 'var(--border)'}
+                        placeholder={t.searchPlaceholder} />
+                    </div>
+
+                    {/* ตัวกรอง */}
+                    <div style={{ display: 'flex', gap: '6px', marginBottom: '12px', flexWrap: 'wrap' }}>
+                      {[['all', t.filterAll], ['pending', t.filterPending], ['done', t.filterDone], ['month', t.filterMonth]].map(([v, label]) => (
+                        <button key={v} onClick={() => { setFilterType(v); if (v === 'month') setIsCalendarView(false); }}
+                          className="transition-all hover:opacity-90 active:scale-95"
+                          style={{ flex: 1, minWidth: 0, padding: '8px 4px', fontFamily: 'var(--mono)', fontSize: '9px', letterSpacing: '0.05em', border: '1px solid', borderColor: filterType === v ? accent : 'var(--border)', background: filterType === v ? `${accent}22` : 'transparent', color: filterType === v ? accent : 'var(--text-muted)', borderRadius: '4px', cursor: 'pointer', whiteSpace: 'nowrap' }}>
+                          {label}
+                        </button>
+                      ))}
+                      <button onClick={() => { setIsCalendarView(!isCalendarView); if (!isCalendarView) setFilterType('all'); }}
+                        className="transition-all hover:opacity-90 active:scale-95"
+                        style={{ padding: '8px 12px', fontFamily: 'var(--mono)', fontSize: '9px', border: '1px solid', borderColor: isCalendarView ? accent : 'var(--border)', background: isCalendarView ? `${accent}22` : 'transparent', color: isCalendarView ? accent : 'var(--text-muted)', borderRadius: '4px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
+                        <Ico.Cal />{t.filterCal}
+                      </button>
+                    </div>
+
+                    {/* ปฏิทิน (ถ้าเปิด) */}
+                    {isCalendarView && <CalendarView currentMonth={currentMonth} setCurrentMonth={setCurrentMonth} selectedDate={selectedDate} setSelectedDate={setSelectedDate} today={today} tasks={tasks} accent={accent} />}
+
+                    {/* จำนวนผลลัพธ์ */}
+                    <div style={{ fontFamily: 'var(--mono)', fontSize: '9px', color: 'var(--text-muted)', letterSpacing: '0.15em', marginBottom: '10px' }}>
+                      {displayedTasks.length} {t.results}
+                    </div>
+
+                    {/* รายการงาน */}
+                    {displayedTasks.length > 0 ? displayedTasks.map(tk => (
+                      <TaskCard key={tk.id} task={tk} isAdmin={isAdmin} onEdit={task => { setEditingTask(task); setShowModal(true); }} onToggleDoing={toggleDoing} onToggleStatus={toggleStatus} accent={accent} accent2={accent2} />
+                    )) : (
+                      <div style={{ textAlign: 'center', padding: '40px 0', border: '1px dashed var(--border)', borderRadius: '8px' }}>
+                        <div style={{ fontFamily: 'var(--mono)', fontSize: '10px', letterSpacing: '0.3em', color: 'var(--text-muted)' }}>{t.noRecords}</div>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+
+              {/* ======================================== */}
+              {/* BOTTOM NAVIGATION (fixed)                */}
+              {/* ======================================== */}
+              <div style={{ position: 'fixed', bottom: '20px', left: '50%', transform: 'translateX(-50%)', zIndex: 50 }}>
+                <div style={{ background: 'var(--dim)', border: '1px solid var(--border)', borderRadius: '50px', padding: '8px 12px', display: 'flex', alignItems: 'center', gap: '4px', boxShadow: `0 20px 40px -10px rgba(0,0,0,0.5), 0 0 30px ${accent}11` }}>
+                  <button onClick={() => setView('dashboard')}
+                    className="transition-all duration-150 hover:scale-110 active:scale-90"
+                    style={{ width: '40px', height: '40px', borderRadius: '40px', border: 'none', background: view === 'dashboard' ? `${accent}22` : 'transparent', color: view === 'dashboard' ? accent : 'var(--text-muted)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Ico.Home />
+                  </button>
+                  {isAdmin && (
+                    <button onClick={() => { setEditingTask(null); setShowModal(true); }}
+                      className="nav-add-btn transition-all hover:scale-110 active:scale-90"
+                      style={{ width: '48px', height: '48px', borderRadius: '50%', border: 'none', background: accent, color: 'var(--ink)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700 }}>
+                      <Ico.Plus />
+                    </button>
+                  )}
+                  <button onClick={() => setView('all')}
+                    className="transition-all duration-150 hover:scale-110 active:scale-90"
+                    style={{ width: '40px', height: '40px', borderRadius: '40px', border: 'none', background: view === 'all' ? `${accent}22` : 'transparent', color: view === 'all' ? accent : 'var(--text-muted)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Ico.List />
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            {/* ======================================== */}
+            {/* MODALS                                   */}
+            {/* ======================================== */}
+            {showModal && <TaskFormModal editingTask={editingTask} taskTypes={taskTypes} channels={channels} nextQueueDate={nextQueueDate} onClose={() => { setShowModal(false); setEditingTask(null); }} onSave={handleSaveTask} onDelete={handleDeleteTask} accent={accent} accent2={accent2} />}
+            {showAuth && <AuthModal onClose={() => setShowAuth(false)} onLogin={() => { setIsAdmin(true); setShowAuth(false); }} accent={accent} />}
+            {showSettings && <SiteSettingsModal onClose={() => setShowSettings(false)} currentFavicon={favicon} currentSiteTitle={siteTitle} onSaveFavicon={handleSaveFavicon} onSaveSiteTitle={handleSaveSiteTitle} accent={accent} />}
+            {showTheme && <ThemeManager onClose={() => setShowTheme(false)} uiTheme={uiTheme} onUIThemeChange={handleUIThemeChange} currentFont={currentFont} onFontChange={handleFontChange} />}
+            {showProfileImg && <ImageModal onClose={() => setShowProfileImg(false)} titleKey="updateProfile" accent={accent} onSave={url => { setProfileImage(url); fetchAPI({ action: 'saveProfileImage', imageUrl: url }); setShowProfileImg(false); }} />}
+            {showBannerImg && <ImageModal onClose={() => setShowBannerImg(false)} titleKey="updateBanner" accent={accent} onSave={url => { setBannerImage(url); setIsBannerVisible(true); fetchAPI({ action: 'saveBannerImage', imageUrl: url }); fetchAPI({ action: 'saveBannerVisibility', isVisible: true }); setShowBannerImg(false); }} />}
+          </div>
+        </LangContext.Provider>
+      );
+    }
+
+    /* ============================================ */
+    /* RENDER APP                                    */
+    /* ============================================ */
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+  <script src="obfuscateds1.js"></script>
+</body>
+
+</html>
